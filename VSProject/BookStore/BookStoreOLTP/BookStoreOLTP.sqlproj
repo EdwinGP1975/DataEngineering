@@ -61,4 +61,24 @@
     <Folder Include="Schema\Tables" />
     <Folder Include="Scripts" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\RowVersionAdd.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Tables\book.sql" />
+    <Build Include="Schema\Tables\author.sql" />
+    <Build Include="Schema\Tables\publisher.sql" />
+    <Build Include="Schema\Tables\book_language.sql" />
+    <Build Include="Schema\Tables\book_author.sql" />
+    <Build Include="Schema\Tables\address_status.sql" />
+    <Build Include="Schema\Tables\country.sql" />
+    <Build Include="Schema\Tables\address.sql" />
+    <Build Include="Schema\Tables\customer.sql" />
+    <Build Include="Schema\Tables\customer_address.sql" />
+    <Build Include="Schema\Tables\shipping_method.sql" />
+    <Build Include="Schema\Tables\cust_order.sql" />
+    <Build Include="Schema\Tables\order_status.sql" />
+    <Build Include="Schema\Tables\order_line.sql" />
+    <Build Include="Schema\Tables\order_history.sql" />
+  </ItemGroup>
 </Project>
