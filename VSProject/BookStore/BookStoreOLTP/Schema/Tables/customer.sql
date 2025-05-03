@@ -3,5 +3,6 @@
     first_name VARCHAR(200),
     last_name VARCHAR(200),
     email VARCHAR(350),
+    [rowversion] TIMESTAMP NOT NULL, 
     CONSTRAINT pk_customer PRIMARY KEY (customer_id)
 )
