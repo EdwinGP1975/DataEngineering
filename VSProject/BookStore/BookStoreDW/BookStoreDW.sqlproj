@@ -66,4 +66,11 @@
     <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Tables\staging" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Security\schemas\staging.sql" />
+    <Build Include="Schema\Tables\dbo\DimDeliverySite.sql" />
+    <Build Include="Schema\Tables\staging\staging.deliverySite.sql" />
+    <Build Include="Schema\Tables\dbo\FactCustOrder.sql" />
+    <Build Include="Schema\Tables\staging\staging.custOrder.sql" />
+  </ItemGroup>
 </Project>
