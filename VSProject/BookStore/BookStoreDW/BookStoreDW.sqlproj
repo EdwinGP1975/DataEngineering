@@ -79,5 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
+    <None Include="Scripts\DimDate.data.sql" />
+    <None Include="Scripts\PackageConfig.data.sql" />
+    <None Include="Scripts\PatchDimDate.data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
