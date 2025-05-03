@@ -69,8 +69,6 @@
   <ItemGroup>
     <Build Include="Schema\Tables\staging\Book.sql" />
     <Build Include="Schema\Tables\dbo\DimBook.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Schema\Security\schemas\staging-schema.sql" />
+    <Build Include="Schema\Security\schemas\staging-schema.sql" />
   </ItemGroup>
 </Project>

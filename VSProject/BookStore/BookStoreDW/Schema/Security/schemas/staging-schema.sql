@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [staging];
+﻿CREATE SCHEMA [staging]
