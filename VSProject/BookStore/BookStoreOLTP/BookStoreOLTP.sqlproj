@@ -62,9 +62,6 @@
     <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\RowVersionAdd.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <Build Include="Schema\Tables\book.sql" />
     <Build Include="Schema\Tables\author.sql" />
     <Build Include="Schema\Tables\publisher.sql" />
