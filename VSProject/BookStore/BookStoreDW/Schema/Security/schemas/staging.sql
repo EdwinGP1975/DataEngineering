@@ -1,2 +1,3 @@
 ﻿CREATE SCHEMA [staging]
 GO
+

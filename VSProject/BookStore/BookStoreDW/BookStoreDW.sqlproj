@@ -67,14 +67,13 @@
     <Folder Include="Schema\Tables\staging" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schema\Security\schemas\staging.sql" />
     <Build Include="Schema\Tables\dbo\DimDeliverySite.sql" />
     <Build Include="Schema\Tables\staging\staging.deliverySite.sql" />
     <Build Include="Schema\Tables\dbo\FactCustOrder.sql" />
     <Build Include="Schema\Tables\staging\staging.custOrder.sql" />
     <Build Include="Schema\Tables\staging\Book.sql" />
     <Build Include="Schema\Tables\dbo\DimBook.sql" />
-    <Build Include="Schema\Security\schemas\staging-schema.sql" />
+    <Build Include="Schema\Security\schemas\staging.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
