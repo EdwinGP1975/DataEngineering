@@ -71,7 +71,7 @@
     <Build Include="Schema\Tables\staging\staging.deliverySite.sql" />
     <Build Include="Schema\Tables\dbo\FactCustOrder.sql" />
     <Build Include="Schema\Tables\staging\staging.custOrder.sql" />
-    <Build Include="Schema\Tables\staging\Book.sql" />
+    <Build Include="Schema\Tables\staging\staging.book.sql" />
     <Build Include="Schema\Tables\dbo\DimBook.sql" />
     <Build Include="Schema\Security\schemas\staging.sql" />
     <Build Include="Schema\Tables\dbo\PackageConfig.sql" />
