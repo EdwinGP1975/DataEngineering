@@ -66,4 +66,11 @@
     <Folder Include="Schema\Tables\dbo" />
     <Folder Include="Schema\Tables\staging" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Tables\staging\Book.sql" />
+    <Build Include="Schema\Tables\dbo\DimBook.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema\Security\schemas\staging-schema.sql" />
+  </ItemGroup>
 </Project>
