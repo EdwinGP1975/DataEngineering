@@ -80,6 +80,9 @@
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeFactCustOrder.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
+	<Build Include="Schema\Tables\dbo\DimPublisher.sql" />
+    <Build Include="Schema\Tables\staging\staging.publisher.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimPublisher.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
