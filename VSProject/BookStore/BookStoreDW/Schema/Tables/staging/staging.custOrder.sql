@@ -1,4 +1,4 @@
-﻿CREATE TABLE [staging].[order]
+﻿CREATE TABLE [staging].[custOrder]
 (
 	[orderId] INT NOT NULL,
 	[lineId] INT NOT NULL,

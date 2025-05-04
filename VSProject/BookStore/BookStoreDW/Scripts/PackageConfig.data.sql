@@ -14,6 +14,20 @@ IF NOT EXISTS(SELECT TOP(1) 1
 GO
 IF NOT EXISTS(SELECT TOP(1) 1
               FROM [dbo].[PackageConfig]
+			  WHERE [tableName] = 'Author')
+ BEGIN
+	INSERT [dbo].[PackageConfig] ([tableName], [lastRowVersion]) VALUES ('Author', 0)
+ END
+GO
+IF NOT EXISTS(SELECT TOP(1) 1
+              FROM [dbo].[PackageConfig]
+			  WHERE [tableName] = 'Publisher')
+ BEGIN
+	INSERT [dbo].[PackageConfig] ([tableName], [lastRowVersion]) VALUES ('Publisher', 0)
+ END
+GO
+IF NOT EXISTS(SELECT TOP(1) 1
+              FROM [dbo].[PackageConfig]
 			  WHERE [tableName] = 'Customer')
  BEGIN
   INSERT [dbo].[PackageConfig] ([tableName], [lastRowVersion]) VALUES ('Customer', 0)
