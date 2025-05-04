@@ -84,6 +84,9 @@
     <Build Include="Schema\Tables\staging\staging.publisher.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimPublisher.sql" />
     <Build Include="Schema\Tables\dbo\DimShippingMethod.sql" />
+    <Build Include="Schema\Tables\dbo\DimAuthor.sql" />
+    <Build Include="Schema\Tables\staging\staging.shippingMethod.sql" />
+    <Build Include="Schema\Tables\staging\staging.author.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
