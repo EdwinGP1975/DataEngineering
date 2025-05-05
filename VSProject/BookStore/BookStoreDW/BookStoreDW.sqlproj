@@ -87,9 +87,11 @@
     <Build Include="Schema\Tables\dbo\DimAuthor.sql" />
     <Build Include="Schema\Tables\staging\staging.shippingMethod.sql" />
     <Build Include="Schema\Tables\staging\staging.author.sql" />
+    <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
+    <Build Include="Schema\Tables\staging\staging.customer.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
     <None Include="Scripts\DimDate.data.sql" />
     <None Include="Scripts\PackageConfig.data.sql" />
     <None Include="Scripts\PatchDimDate.data.sql" />
