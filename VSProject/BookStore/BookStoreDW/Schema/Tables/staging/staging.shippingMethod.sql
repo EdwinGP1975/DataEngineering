@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [staging].[shippingMethod]
 (
-	[shippingMethodSk] [int] IDENTITY(1,1) NOT NULL,
+	[shippingMethodSk] [int] NOT NULL,
 	[methodName] [varchar](100) NULL
 )
