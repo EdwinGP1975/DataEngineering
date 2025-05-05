@@ -10,6 +10,8 @@
 	[customerSk] INT NOT NULL,
 	[destDeliverySiteSk] INT NOT NULL,	
 	[shippingMethodSK] INT,
+	[authorSk] INT,
+	[publisherSk] INT,
 	[price] DECIMAL(5, 2),
 	[orderDate] DATETIME,
 	[statusDate] DATETIME,

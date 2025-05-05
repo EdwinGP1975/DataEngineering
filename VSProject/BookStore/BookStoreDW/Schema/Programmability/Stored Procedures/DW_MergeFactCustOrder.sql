@@ -8,6 +8,8 @@ BEGIN
       ,[customerSk] = co.[customerSk]
       ,[destDeliverySiteSk] = co.[destDeliverySiteSk]
       ,[shippingMethodSk] = co.[shippingMethodSK]
+      ,[authorSk] = co.[authorSk]
+	  ,[publisherSk] = co.[publisherSk]
       ,[price] = co.[price]
       ,[orderDate] = co.[orderDate]
       ,[statusDate] = co.[statusDate]
