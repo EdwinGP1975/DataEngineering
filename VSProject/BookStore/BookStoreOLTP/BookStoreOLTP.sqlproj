@@ -77,5 +77,6 @@
     <Build Include="Schema\Tables\order_status.sql" />
     <Build Include="Schema\Tables\order_line.sql" />
     <Build Include="Schema\Tables\order_history.sql" />
+    <Build Include="Schema\Programmability\GetDatabaseRowVersion.sql" />
   </ItemGroup>
 </Project>
