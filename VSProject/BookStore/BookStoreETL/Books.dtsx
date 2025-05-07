@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Books"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{FCB1D2AB-0ABB-4BA2-84B8-A0C263279B42}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{C579BF9B-0D96-4E5C-9620-D3EFE3DD2AF3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{9557032F-8EC9-4050-8B0D-AAEFF02D2961}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMWkjlIiVkkOO28GGFzcmuwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAqyzsI/WQC2jFAv5jrNd5bZM3boM6ysuWDNTwPqzqm+QAAAAAOgAAAAAIAACAAAAC5A2UR7h9Jf7lugwFgmvdoxPw8h7kqUel9rba3BKWM3SAAAACqxb4JSe5Dngti0WUeSiCrCuF7j7X4HmQgmYSPXS/iT0AAAAA3hCandpop+iL1nTezQ3jqiwuwt+6qpfrXBHbENMFy245cu9/Ot9RSTgCRb0MQSF/MGuczhXtNeT83xfUZDhcI</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{9557032F-8EC9-4050-8B0D-AAEFF02D2961}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,12 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Books-{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}NTBEGP\SQL2022.BookStoreDW.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMWkjlIiVkkOO28GGFzcmuwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC+EKilXoPz/orOiMdIOdgWT9lJLILBml+Xnqn+mhY97QAAAAAOgAAAAAIAACAAAABT8s8lyg3ZmR5r8+q3rIdAevz6DJs3Jad0hQuKR7PDAiAAAAAWVVS0GKhzxktAf41L2rG1fnWJejrlOxjHFL2aSe1cmkAAAADrZil/He+GFtYewOT0c+hBUJ0IhiBUV6MGeXdMyX1w0siocSbGTE8vQiRrIV8438ahHsXojnrbMt7t47ONG4Kx</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Books-{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}NTBEGP\SQL2022.BookStoreDW.sa;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -59,12 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{AFC2E1A8-3F56-4C4D-A737-093C6F629983}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMWkjlIiVkkOO28GGFzcmuwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1XDMlMvb1tOKvd0tXkeltvM36XBE7Yu8Yr95pN9p+BwAAAAAOgAAAAAIAACAAAAB1DFiKBCVLt2xUHYgqeWpxoLN4b0IyHv382Rh5PTxHSSAAAACKh/NjLLgkUQ3MEWfav7FWVwEGCzLzSkQILT+c1injzkAAAAD/tHtAtw+PIiV6KDOz+Rb5MI8SOLo6vaFmcsokcNW7lRQajgT9IBwqzSiT+KXipQB6mjDhI7eQct6YLbyegLcC</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{AFC2E1A8-3F56-4C4D-A737-093C6F629983}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1028,27 +1013,43 @@ where [refTable].[bookId] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,41.6"
+          Size="170,42"
+          Id="Package\Clean-up Staging Area"
+          TopLeft="321.666649091576,202.799998589754" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Get Book Row Version"
+          TopLeft="313.333316213555,117.866665847037" />
+        <NodeLayout
+          Size="204,42"
           Id="Package\Get Database Row Version"
           TopLeft="309.999983062347,39.8666663894389" />
         <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Get Book Row Version"
-          TopLeft="313.333316213555,117.866665847037" />
+          Size="134,42"
+          Id="Package\Load Books"
+          TopLeft="339.99998142322,283.399998029272" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Sync Staging"
+          TopLeft="339.99998142322,367.466664906873" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Update Config"
+          TopLeft="341.666647998824,456.599997414549" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="408.466649637951,81.4666663894389">
+          TopLeft="408.416649637951,81.8666663894389">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.3999994575977"
+              EndConnector="0,35.9999994575981"
               Start="0,0"
-              End="0,28.8999994575977">
+              End="0,28.4999994575981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8999994575977" />
+                    End="0,28.4999994575981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1057,10 +1058,6 @@ where [refTable].[bookId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Clean-up Staging Area"
-          TopLeft="321.666649091576,202.799998589754" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="405.899982652565,159.466665847037">
@@ -1083,10 +1080,6 @@ where [refTable].[bookId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Load Books"
-          TopLeft="339.99998142322,283.399998029272" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="406.833315257398,244.399998589754">
@@ -1109,10 +1102,6 @@ where [refTable].[bookId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Sync Staging"
-          TopLeft="339.99998142322,367.466664906873" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
           TopLeft="408.39998142322,324.999998029272">
@@ -1135,10 +1124,6 @@ where [refTable].[bookId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Update Config"
-          TopLeft="341.666647998824,456.599997414549" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="412.033314711022,409.066664906873">
@@ -1283,33 +1268,15 @@ where [refTable].[bookId] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Books\Get Book Data">
+    design-time-name="Package\Load Books\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Books\Búsqueda">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimBook]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1327,15 +1294,33 @@ where [refTable].[bookId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Books\Destino de OLE DB">
+    design-time-name="Package\Load Books\Búsqueda">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBook]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Books\Get Book Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
