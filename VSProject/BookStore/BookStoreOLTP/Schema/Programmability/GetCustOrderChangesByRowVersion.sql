@@ -33,6 +33,8 @@ BEGIN
 	  ,co.[customer_id]
 	  ,co.[shipping_method_id]
 	  ,co.[dest_address_id]
+	  ,ba.author_id
+	  ,b.publisher_id
 	  ,ol.[price]
 	  ,co.[order_date]
 	  ,oh.[status_date]
@@ -41,6 +43,8 @@ BEGIN
 		JOIN [dbo].[order_line] ol ON ol.order_id = co.order_id
 		JOIN [dbo].[order_history] oh ON oh.order_id = co.order_id
 		JOIN [dbo].[order_status] os ON os.status_id = oh.status_id
+		JOIN [dbo].[book_author] ba ON ba.book_id = ol.book_id
+		JOIN [dbo].[book] b ON b.book_id = ol.book_id
 	WHERE (co.[rowversion] > CONVERT(ROWVERSION,@startRow)
 			AND co.[rowversion] <= CONVERT(ROWVERSION,@endRow))
 		OR (ol.[rowversion] > CONVERT(ROWVERSION,@startRow)
@@ -49,5 +53,9 @@ BEGIN
 			AND oh.[rowversion] <= CONVERT(ROWVERSION,@endRow))
 		OR (os.[rowversion] > CONVERT(ROWVERSION,@startRow)
 			AND os.[rowversion] <= CONVERT(ROWVERSION,@endRow))
+		OR (ba.[rowversion] > CONVERT(ROWVERSION,@startRow)
+			AND ba.[rowversion] <= CONVERT(ROWVERSION,@endRow))
+		OR (b.[rowversion] > CONVERT(ROWVERSION,@startRow)
+			AND b.[rowversion] <= CONVERT(ROWVERSION,@endRow))
 END
 GO
