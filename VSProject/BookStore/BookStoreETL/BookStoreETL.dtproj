@@ -30,14 +30,9 @@
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DimDeliverySite.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="CustOrder.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAupUCARC00UG96Y5ebUhTJAAAAAACAAAAAAAQZgAAAAEAACAAAADWsLukHl9QtejNjx9K2HGdabCyNEY8TSyXzTk8919f2AAAAAAOgAAAAAIAACAAAAA1sEzZg0QPbgjN4pWHgTE12FftrfH9eJgG5/5JqZH5IpAAAACbQxCFuaQzRoJMrrktM6QlOM25Iz/u97j7/6isk3EyceSBB6AkwjP7V+c8oasYxP/SUj7SSSEqPaXrVo5AJyb6Cmd5exx9l/AbUkkmCrubXgGboV1hFsBM+A0CKjnvxTLbMmTSL4oqtNMXnwuaKNNpOTmp/RiGdtl9Wi/kFh3tLS8r9C3d7Um0K6hHvet06AVAAAAAgagF7C29f3pKJ0Vi0MYsgVPsUELuUCYHIxGhLjTmbjpqq904zI140s7FyCpcjKyqbIhmWdlcpAqq/sBDtXIH8A==</SSIS:Property>
-          <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
-        </SSIS:Properties>
-        <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Books.dtsx" SSIS:EntryPoint="1" />
+		  <SSIS:Package SSIS:Name="Books.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Author.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Customer.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
