@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Books"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{C579BF9B-0D96-4E5C-9620-D3EFE3DD2AF3}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{2D9DF829-1E4E-429A-926E-8FA52D3733B9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1025,7 +1025,7 @@ where [refTable].[bookId] = ?</property>
           Id="Package\Get Database Row Version"
           TopLeft="309.999983062347,39.8666663894389" />
         <NodeLayout
-          Size="134,42"
+          Size="137,42"
           Id="Package\Load Books"
           TopLeft="339.99998142322,283.399998029272" />
         <NodeLayout
@@ -1082,18 +1082,18 @@ where [refTable].[bookId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="406.833315257398,244.399998589754">
+          TopLeft="407.583315257398,244.799998589754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.9999994395176"
+              EndConnector="0,38.599999439518"
               Start="0,0"
-              End="0,31.4999994395176">
+              End="0,31.099999439518">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4999994395176" />
+                    End="0,31.099999439518" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1104,18 +1104,18 @@ where [refTable].[bookId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="408.39998142322,324.999998029272">
+          TopLeft="409.24998142322,325.399998029272">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.4666668776009"
+              EndConnector="0,42.066666877601"
               Start="0,0"
-              End="0,34.9666668776009">
+              End="0,34.566666877601">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.9666668776009" />
+                    End="0,34.566666877601" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1155,13 +1155,21 @@ where [refTable].[bookId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="146.4,41.6"
-          Id="Package\Load Books\Get Book Data"
-          TopLeft="406.999993935228,70.9999989420176" />
+          Size="169,42"
+          Id="Package\Load Books\Destino de OLE DB"
+          TopLeft="606.999990954995,287.999995708465" />
         <NodeLayout
-          Size="125.6,41.6"
+          Size="140,42"
+          Id="Package\Load Books\Load Staging"
+          TopLeft="178.999997332692,284.999995753169" />
+        <NodeLayout
+          Size="126,42"
           Id="Package\Load Books\Búsqueda"
           TopLeft="417.999993771315,153.999997705221" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Load Books\Get Book Data"
+          TopLeft="406.999993935228,70.9999989420176" />
         <EdgeLayout
           Id="Package\Load Books.Paths[Salida de origen de OLE DB]"
           TopLeft="480.499993853271,112.599998942018">
@@ -1184,50 +1192,6 @@ where [refTable].[bookId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Load Books\Load Staging"
-          TopLeft="178.999997332692,284.999995753169" />
-        <EdgeLayout
-          Id="Package\Load Books.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="461.199993771315,195.599997705221">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-212.199996438622,89.3999980479479"
-              Start="0,0"
-              End="-212.199996438622,81.8999980479479">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.4347161855788" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.4347161855788"
-                    Point2="0,36.4347161855788"
-                    Point3="-4,36.4347161855788" />
-                  <mssgle:LineSegment
-                    End="-208.199996438622,36.4347161855788" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-208.199996438622,36.4347161855788"
-                    Point2="-212.199996438622,36.4347161855788"
-                    Point3="-212.199996438622,40.4347161855788" />
-                  <mssgle:LineSegment
-                    End="-212.199996438622,81.8999980479479" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-205.919021656811,41.4347161855788,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\Load Books\Destino de OLE DB"
-          TopLeft="606.999990954995,287.999995708465" />
         <EdgeLayout
           Id="Package\Load Books.Paths[Salida de entradas no coincidentes de búsqueda]"
           TopLeft="500.399993771315,195.599997705221">
@@ -1261,6 +1225,42 @@ where [refTable].[bookId] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-11.3890248456598,42.6573576767939,213.778046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Books.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="461.199993771315,195.599997705221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-212.199996438622,89.3999980479479"
+              Start="0,0"
+              End="-212.199996438622,81.8999980479479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4347161855788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4347161855788"
+                    Point2="0,36.4347161855788"
+                    Point3="-4,36.4347161855788" />
+                  <mssgle:LineSegment
+                    End="-208.199996438622,36.4347161855788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-208.199996438622,36.4347161855788"
+                    Point2="-212.199996438622,36.4347161855788"
+                    Point3="-212.199996438622,40.4347161855788" />
+                  <mssgle:LineSegment
+                    End="-212.199996438622,81.8999980479479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-205.919021656811,41.4347161855788,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
