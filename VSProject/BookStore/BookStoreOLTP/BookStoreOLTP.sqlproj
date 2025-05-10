@@ -83,4 +83,25 @@
     <Build Include="Schema\Programmability\GetBookChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\GetCustomerChangesByRowVersion.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\address.data.sql" />
+    <None Include="Scripts\address_status.data.sql" />
+    <None Include="Scripts\author.data.sql" />
+    <None Include="Scripts\book.data.sql" />
+    <None Include="Scripts\book_author.data.sql" />
+    <None Include="Scripts\book_language.data.sql" />
+    <None Include="Scripts\clean.data.sql" />
+    <None Include="Scripts\country.data.sql" />
+    <None Include="Scripts\cust_order.data.sql" />
+    <None Include="Scripts\customer.data.sql" />
+    <None Include="Scripts\customer_address.data.sql" />
+    <None Include="Scripts\order_history.data.sql" />
+    <None Include="Scripts\order_line.data.sql" />
+    <None Include="Scripts\order_status.data.sql" />
+    <None Include="Scripts\publisher.data.sql" />
+    <None Include="Scripts\shipping_method.data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Populate_Initial_DB.PostDeployment.sql" />
+  </ItemGroup>
 </Project>
