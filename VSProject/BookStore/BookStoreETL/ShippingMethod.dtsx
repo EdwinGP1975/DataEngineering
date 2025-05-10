@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{E8A441AE-9C5C-4CF6-82C0-744FF49FE250}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{E4E750EF-55F8-4270-9806-4216615BFA09}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=BookStoreDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}localhost.BookStoreDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}localhost.BookStoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=BookStoreOLTP;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{98063E68-0E05-49B5-8057-9D4470B4785F}localhost.BookStoreOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{98063E68-0E05-49B5-8057-9D4470B4785F}localhost.BookStoreOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1051,10 +1051,6 @@ where [refTable].[shippingMethodId] = ?</property>
           Id="Package\Load shippingMethod\Load staging"
           TopLeft="142,303" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\Load shippingMethod\Load shippingMethod"
-          TopLeft="438,311" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Load shippingMethod\Lookup"
           TopLeft="313,209" />
@@ -1062,6 +1058,46 @@ where [refTable].[shippingMethodId] = ?</property>
           Size="173,42"
           Id="Package\Load shippingMethod\Get shippingMethod"
           TopLeft="319,134" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load shippingMethod\Load shippingMethod"
+          TopLeft="438,311" />
+        <EdgeLayout
+          Id="Package\Load shippingMethod.Paths[Lookup Match Output]"
+          TopLeft="369.5,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158,52"
+              Start="0,0"
+              End="-158,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-154,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154,26"
+                    Point2="-158,26"
+                    Point3="-158,30" />
+                  <mssgle:LineSegment
+                    End="-158,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.19138671875,31,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load shippingMethod.Paths[OLE DB Source Output]"
           TopLeft="405.5,176">
@@ -1129,42 +1165,6 @@ where [refTable].[shippingMethodId] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="14.44361328125,29.5026178010471,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load shippingMethod.Paths[Lookup Match Output]"
-          TopLeft="369.5,251">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-158,52"
-              Start="0,0"
-              End="-158,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-154,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-154,26"
-                    Point2="-158,26"
-                    Point3="-158,30" />
-                  <mssgle:LineSegment
-                    End="-158,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.19138671875,31,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
