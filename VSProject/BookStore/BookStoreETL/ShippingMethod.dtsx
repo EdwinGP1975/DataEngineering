@@ -1,50 +1,50 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="5/6/2025 8:09:29 PM"
+  DTS:CreationDate="5/9/2025 12:06:09 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="IDALIA-PSC"
   DTS:CreatorName="Idalia-PSC\Belen Oña"
-  DTS:DTSID="{E9E0A615-17D7-4414-B180-3B38046E74B9}"
+  DTS:DTSID="{B034BACD-EE4A-46F6-A721-D7397CA9928E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="16394"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{4240D69C-2303-4282-84C0-DFBC957B8592}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{B928FBC6-9212-402D-9C57-9D784475000A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Source.BookStoreOLTP]"
+      DTS:refId="Package.ConnectionManagers[localhost.BookStoreDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C6F3E457-25C1-437C-9D44-3617A974B980}"
-      DTS:ObjectName="Source.BookStoreOLTP">
+      DTS:DTSID="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
+      DTS:ObjectName="localhost.BookStoreDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BookStoreOLTP;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{C6F3E457-25C1-437C-9D44-3617A974B980}localhost.BookStoreOLTP;" />
+          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=BookStoreDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}localhost.BookStoreDW;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Target.BookStoreDW]"
+      DTS:refId="Package.ConnectionManagers[localhost.BookStoreOLTP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F1E043D8-D237-4556-A609-8DFC2B7BE78C}"
-      DTS:ObjectName="Target.BookStoreDW">
+      DTS:DTSID="{98063E68-0E05-49B5-8057-9D4470B4785F}"
+      DTS:ObjectName="localhost.BookStoreOLTP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=BookStoreDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{F1E043D8-D237-4556-A609-8DFC2B7BE78C}localhost.BookStoreDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=BookStoreOLTP;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{98063E68-0E05-49B5-8057-9D4470B4785F}localhost.BookStoreOLTP;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B1891A9E-913A-447A-B7D3-8C99C6F8B107}"
+      DTS:DTSID="{DB1A9DEA-4902-4AD2-9FEE-EEF02C96DA8E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="dbts">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5CB840F8-C6A3-46B3-815C-44FE1560F69E}"
+      DTS:DTSID="{B32202DD-4272-4A7B-9ACE-8937ED1B5899}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="lastRowVersion">
@@ -66,7 +66,7 @@
       DTS:refId="Package\clean-up staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{FC4C3F6C-78E1-4DF8-A5EA-F0A4B03DBC67}"
+      DTS:DTSID="{3CFA0E8B-9954-4546-ADC6-D2A5DB44EECF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="clean-up staging"
@@ -75,15 +75,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F1E043D8-D237-4556-A609-8DFC2B7BE78C}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[author]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[shippingMethod]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Get Database Row Version"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{63D0A992-A94F-490A-B552-68A376AC1EA6}"
+      DTS:DTSID="{C5288161-60DD-4F4A-B24B-BB2FD63B28EE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Database Row Version"
@@ -92,25 +92,25 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C6F3E457-25C1-437C-9D44-3617A974B980}"
+          SQLTask:Connection="{98063E68-0E05-49B5-8057-9D4470B4785F}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get DB RowVersion Author"
+      DTS:refId="Package\Get DB RowVersion ShippingMtehod"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{52F026CC-9914-4D1B-935E-430356715CBB}"
+      DTS:DTSID="{D9E1B207-0F6D-457C-9FA5-4868C18C821D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get DB RowVersion Author"
+      DTS:ObjectName="Get DB RowVersion ShippingMtehod"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F1E043D8-D237-4556-A609-8DFC2B7BE78C}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='Author'"
+          SQLTask:Connection="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='ShippingMethod'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="lastRowVersion"
@@ -119,13 +119,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Load Author"
+      DTS:refId="Package\Load shippingMethod"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E7D049F6-A1AE-4068-BC83-DFF6BA6B90D0}"
+      DTS:DTSID="{6A491A33-1FBE-4B70-856F-2DFD8F077237}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Load Author"
+      DTS:ObjectName="Load shippingMethod"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -133,11 +133,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Load Author\Get Author"
+              refId="Package\Load shippingMethod\Get shippingMethod"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Get Author"
+              name="Get shippingMethod"
               usesDispositions="true"
               version="7">
               <properties>
@@ -157,7 +157,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAuthorChangesByRowVersion]  @startRow=?, @endRow=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetShippingMethodChangesByRowVersion]  @startRow=?, @endRow=?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -178,104 +178,128 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{5CB840F8-C6A3-46B3-815C-44FE1560F69E};"@endRow:Input",{B1891A9E-913A-447A-B7D3-8C99C6F8B107};</property>
+                  name="ParameterMapping">"@startRow:Input",{B32202DD-4272-4A7B-9ACE-8937ED1B5899};"@endRow:Input",{DB1A9DEA-4902-4AD2-9FEE-EEF02C96DA8E};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Author\Get Author.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Source.BookStoreOLTP]"
-                  connectionManagerRefId="Package.ConnectionManagers[Source.BookStoreOLTP]"
+                  refId="Package\Load shippingMethod\Get shippingMethod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BookStoreOLTP]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BookStoreOLTP]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output]"
+                  refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_id]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[rowversion]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
+                      length="8"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[rowversion]"
+                      name="rowversion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[author_id]"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_id]"
-                      name="author_id"
+                      externalMetadataColumnId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[method_id]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_id]"
+                      name="method_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_name]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[author_name]"
-                      length="400"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_name]"
-                      name="author_name"
+                      externalMetadataColumnId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[method_name]"
+                      length="100"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_name]"
+                      name="method_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      dataType="bytes"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[cost]"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
-                      length="8"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[rowversion]"
-                      name="rowversion"
+                      externalMetadataColumnId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[cost]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[cost]"
+                      name="cost"
+                      precision="6"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[author_id]"
-                      dataType="i4"
-                      name="author_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[author_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="400"
-                      name="author_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[rowversion]"
                       dataType="bytes"
                       length="8"
                       name="rowversion" />
+                    <externalMetadataColumn
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[method_id]"
+                      dataType="i4"
+                      name="method_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[method_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="method_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].ExternalColumns[cost]"
+                      dataType="numeric"
+                      name="cost"
+                      precision="6"
+                      scale="2" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[author_id]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[method_id]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[author_id]"
-                      name="author_id" />
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[method_id]"
+                      name="method_id" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[author_name]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[method_name]"
                       codePage="1252"
                       dataType="str"
-                      length="400"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[author_name]"
-                      name="author_name" />
+                      length="100"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[method_name]"
+                      name="method_name" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[rowversion]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[cost]"
+                      dataType="numeric"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[cost]"
+                      name="cost"
+                      precision="6"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[rowversion]"
                       dataType="bytes"
                       length="8"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[rowversion]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[rowversion]"
                       name="rowversion" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -284,11 +308,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Author\Load Author"
+              refId="Package\Load shippingMethod\Load shippingMethod"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Load Author"
+              name="Load shippingMethod"
               usesDispositions="true"
               version="4">
               <properties>
@@ -299,7 +323,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimAuthor]</property>
+                  name="OpenRowset">[dbo].[DimShippingMethod]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -341,72 +365,72 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Author\Load Author.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Target.BookStoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Target.BookStoreDW]"
+                  refId="Package\Load shippingMethod\Load shippingMethod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BookStoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BookStoreDW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].Columns[author_id]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].Columns[method_id]"
                       cachedDataType="i4"
-                      cachedName="author_id"
-                      externalMetadataColumnId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].ExternalColumns[authorId]"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_id]" />
+                      cachedName="method_id"
+                      externalMetadataColumnId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].ExternalColumns[shippingMethodId]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_id]" />
                     <inputColumn
-                      refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].Columns[author_name]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].Columns[method_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="400"
-                      cachedName="author_name"
-                      externalMetadataColumnId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].ExternalColumns[authorName]"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_name]" />
+                      cachedLength="100"
+                      cachedName="method_name"
+                      externalMetadataColumnId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].ExternalColumns[methodName]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].ExternalColumns[authorSk]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].ExternalColumns[shippingMethodSk]"
                       dataType="i4"
-                      name="authorSk" />
+                      name="shippingMethodSk" />
                     <externalMetadataColumn
-                      refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].ExternalColumns[authorId]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].ExternalColumns[shippingMethodId]"
                       dataType="i4"
-                      name="authorId" />
+                      name="shippingMethodId" />
                     <externalMetadataColumn
-                      refId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input].ExternalColumns[authorName]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input].ExternalColumns[methodName]"
                       codePage="1252"
                       dataType="str"
-                      length="400"
-                      name="authorName" />
+                      length="100"
+                      name="methodName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Author\Load Author.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load shippingMethod\Load shippingMethod.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Load Author.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Load Author.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load shippingMethod\Load shippingMethod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Author\Load Author.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load shippingMethod\Load shippingMethod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Load Author.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load shippingMethod\Load shippingMethod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -415,7 +439,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Author\Load staging"
+              refId="Package\Load shippingMethod\Load staging"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -430,7 +454,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[staging].[author]</property>
+                  name="OpenRowset">[staging].[shippingMethod]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -472,68 +496,68 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Author\Load staging.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Target.BookStoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Target.BookStoreDW]"
+                  refId="Package\Load shippingMethod\Load staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BookStoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BookStoreDW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].Columns[authorSk]"
+                      refId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].Columns[shippingMethodSk]"
                       cachedDataType="i4"
-                      cachedName="authorSk"
-                      externalMetadataColumnId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[authorSk]"
-                      lineageId="Package\Load Author\Lookup.Outputs[Lookup Match Output].Columns[authorSk]" />
+                      cachedName="shippingMethodSk"
+                      externalMetadataColumnId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[shippingMethodSk]"
+                      lineageId="Package\Load shippingMethod\Lookup.Outputs[Lookup Match Output].Columns[shippingMethodSk]" />
                     <inputColumn
-                      refId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].Columns[author_name]"
+                      refId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].Columns[method_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="400"
-                      cachedName="author_name"
-                      externalMetadataColumnId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[authorName]"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_name]" />
+                      cachedLength="100"
+                      cachedName="method_name"
+                      externalMetadataColumnId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[methodName]"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[authorSk]"
+                      refId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[shippingMethodSk]"
                       dataType="i4"
-                      name="authorSk" />
+                      name="shippingMethodSk" />
                     <externalMetadataColumn
-                      refId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[authorName]"
+                      refId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[methodName]"
                       codePage="1252"
                       dataType="str"
-                      length="400"
-                      name="authorName" />
+                      length="100"
+                      name="methodName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Author\Load staging.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load shippingMethod\Load staging.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load shippingMethod\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load shippingMethod\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Author\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load shippingMethod\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load shippingMethod\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -542,7 +566,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Author\Lookup"
+              refId="Package\Load shippingMethod\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -555,14 +579,14 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAuthor]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimShippingMethod]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAuthor]) [refTable]
-where [refTable].[authorId] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimShippingMethod]) [refTable]
+where [refTable].[shippingMethodId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -593,12 +617,12 @@ where [refTable].[authorId] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="authorSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="authorId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="authorName" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="shippingMethodSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shippingMethodId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="methodName" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_id]};</property>
+                  name="ParameterMap">#{Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -610,27 +634,27 @@ where [refTable].[authorId] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Author\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Target.BookStoreDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Target.BookStoreDW]"
+                  refId="Package\Load shippingMethod\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BookStoreDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BookStoreDW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Author\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Author\Lookup.Inputs[Lookup Input].Columns[author_id]"
+                      refId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input].Columns[method_id]"
                       cachedDataType="i4"
-                      cachedName="author_id"
-                      lineageId="Package\Load Author\Get Author.Outputs[OLE DB Source Output].Columns[author_id]">
+                      cachedName="method_id"
+                      lineageId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output].Columns[method_id]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">authorId</property>
+                          name="JoinToReferenceColumn">shippingMethodId</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -643,54 +667,54 @@ where [refTable].[authorId] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Author\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Load shippingMethod\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Load Author\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Lookup.Outputs[Lookup Match Output].Columns[authorSk]"
+                      refId="Package\Load shippingMethod\Lookup.Outputs[Lookup Match Output].Columns[shippingMethodSk]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Load Author\Lookup.Outputs[Lookup Match Output].Columns[authorSk]"
-                      name="authorSk"
+                      lineageId="Package\Load shippingMethod\Lookup.Outputs[Lookup Match Output].Columns[shippingMethodSk]"
+                      name="shippingMethodSk"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">authorSk</property>
+                          name="CopyFromReferenceColumn">shippingMethodSk</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Load Author\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Load shippingMethod\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Load Author\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Load Author\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Load shippingMethod\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Load Author\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Author\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Load shippingMethod\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load shippingMethod\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Author\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load shippingMethod\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Author\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load shippingMethod\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -701,20 +725,20 @@ where [refTable].[authorId] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Load Author.Paths[Lookup Match Output]"
-              endId="Package\Load Author\Load staging.Inputs[OLE DB Destination Input]"
+              refId="Package\Load shippingMethod.Paths[Lookup Match Output]"
+              endId="Package\Load shippingMethod\Load staging.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Load Author\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Load shippingMethod\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Load Author.Paths[Lookup No Match Output]"
-              endId="Package\Load Author\Load Author.Inputs[OLE DB Destination Input]"
+              refId="Package\Load shippingMethod.Paths[Lookup No Match Output]"
+              endId="Package\Load shippingMethod\Load shippingMethod.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\Load Author\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Load shippingMethod\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Load Author.Paths[OLE DB Source Output]"
-              endId="Package\Load Author\Lookup.Inputs[Lookup Input]"
+              refId="Package\Load shippingMethod.Paths[OLE DB Source Output]"
+              endId="Package\Load shippingMethod\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Author\Get Author.Outputs[OLE DB Source Output]" />
+              startId="Package\Load shippingMethod\Get shippingMethod.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -723,7 +747,7 @@ where [refTable].[authorId] = ?</property>
       DTS:refId="Package\Sync Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{5B8D7498-AFE4-4B23-B1CC-D404CC36BB05}"
+      DTS:DTSID="{88D91D15-4E1A-4294-B5F4-E0261E9FA350}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Staging"
@@ -732,15 +756,15 @@ where [refTable].[authorId] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F1E043D8-D237-4556-A609-8DFC2B7BE78C}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimAuthor]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimShippingMethod]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Update config"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{7D68515B-A443-4629-AEDA-993497448DD8}"
+      DTS:DTSID="{4B3BCFBF-8DBA-464D-9C2B-4CAD315DD2BD}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update config"
@@ -749,8 +773,8 @@ where [refTable].[authorId] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F1E043D8-D237-4556-A609-8DFC2B7BE78C}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='Author', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='shipping_method', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::dbts"
@@ -765,39 +789,39 @@ where [refTable].[authorId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{6B6D58C3-9D16-4B08-B8A3-A82D969DD711}"
+      DTS:DTSID="{122545B5-8525-4E91-A658-72D21FD96DB6}"
       DTS:From="Package\Get Database Row Version"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Get DB RowVersion Author" />
+      DTS:To="Package\Get DB RowVersion ShippingMtehod" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{73D7230A-E47D-4FDC-B17F-12D12D3D653E}"
-      DTS:From="Package\Get DB RowVersion Author"
+      DTS:DTSID="{3A1DD534-DEBD-450B-BF9A-9AACCCBA1CBA}"
+      DTS:From="Package\Get DB RowVersion ShippingMtehod"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
       DTS:To="Package\clean-up staging" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
       DTS:CreationName=""
-      DTS:DTSID="{8D181D03-BF1E-46E0-B0E6-370B0CCFD003}"
+      DTS:DTSID="{F7D9965D-A7AF-49BF-91A0-A1A3B75AEBE6}"
       DTS:From="Package\clean-up staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 2"
-      DTS:To="Package\Load Author" />
+      DTS:To="Package\Load shippingMethod" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
       DTS:CreationName=""
-      DTS:DTSID="{F0A99048-3331-44BD-8804-F3901E7F977A}"
-      DTS:From="Package\Load Author"
+      DTS:DTSID="{20118DF9-06A6-404C-846F-6B55E2FC9700}"
+      DTS:From="Package\Load shippingMethod"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
       DTS:To="Package\Sync Staging" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
       DTS:CreationName=""
-      DTS:DTSID="{B3D03C72-579E-4F99-B201-DCF7412EDFF7}"
+      DTS:DTSID="{97246CC9-2E03-44CE-A52A-6BDB350367EF}"
       DTS:From="Package\Sync Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 4"
@@ -818,63 +842,53 @@ where [refTable].[authorId] = ?</property>
         <NodeLayout
           Size="157,42"
           Id="Package\clean-up staging"
-          TopLeft="278,239" />
+          TopLeft="83,229" />
         <NodeLayout
           Size="204,42"
           Id="Package\Get Database Row Version"
-          TopLeft="255,70" />
+          TopLeft="60,60" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Get DB RowVersion Author"
-          TopLeft="255,155" />
+          Size="249,42"
+          Id="Package\Get DB RowVersion ShippingMtehod"
+          TopLeft="60,145" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Load Author"
-          TopLeft="284,307" />
+          Size="179,42"
+          Id="Package\Load shippingMethod"
+          TopLeft="89,297" />
         <NodeLayout
           Size="140,42"
           Id="Package\Sync Staging"
-          TopLeft="281,384" />
+          TopLeft="86,374" />
         <NodeLayout
           Size="144,42"
           Id="Package\Update config"
-          TopLeft="270,465" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="357.25,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="75,455" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="357,197">
+          TopLeft="184.5,187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="-23,42"
               Start="0,0"
-              End="0,34.5">
+              End="-23,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-19,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19,21"
+                    Point2="-23,21"
+                    Point3="-23,25" />
+                  <mssgle:LineSegment
+                    End="-23,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -885,18 +899,30 @@ where [refTable].[authorId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="354.25,281">
+          TopLeft="161.5,271">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26"
+              EndConnector="17,26"
               Start="0,0"
-              End="0,18.5">
+              End="17,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="13,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,13"
+                    Point2="17,13"
+                    Point3="17,17" />
+                  <mssgle:LineSegment
+                    End="17,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -907,18 +933,30 @@ where [refTable].[authorId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="351.5,349">
+          TopLeft="178.5,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="-22.5,35"
               Start="0,0"
-              End="0,27.5">
+              End="-22.5,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,17.5"
+                    Point2="-22.5,17.5"
+                    Point3="-22.5,21.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -929,7 +967,7 @@ where [refTable].[authorId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
-          TopLeft="351,426">
+          TopLeft="156,416">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -961,39 +999,73 @@ where [refTable].[authorId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="162,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.5,43"
+              Start="0,0"
+              End="22.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="18.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,21.5"
+                    Point2="22.5,21.5"
+                    Point3="22.5,25.5" />
+                  <mssgle:LineSegment
+                    End="22.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Load Author">
+    design-time-name="Package\Load shippingMethod">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="139,42"
-          Id="Package\Load Author\Load staging"
+          Id="Package\Load shippingMethod\Load staging"
           TopLeft="142,303" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Load Author\Load Author"
+          Size="179,42"
+          Id="Package\Load shippingMethod\Load shippingMethod"
           TopLeft="438,311" />
         <NodeLayout
           Size="113,42"
-          Id="Package\Load Author\Lookup"
+          Id="Package\Load shippingMethod\Lookup"
           TopLeft="313,209" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load Author\Get Author"
+          Size="173,42"
+          Id="Package\Load shippingMethod\Get shippingMethod"
           TopLeft="319,134" />
         <EdgeLayout
-          Id="Package\Load Author.Paths[OLE DB Source Output]"
-          TopLeft="384,176">
+          Id="Package\Load shippingMethod.Paths[OLE DB Source Output]"
+          TopLeft="405.5,176">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,33"
+              EndConnector="-36,33"
               Start="0,0"
-              End="-14.5,25.5">
+              End="-36,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1004,32 +1076,30 @@ where [refTable].[authorId] = ?</property>
                     Point2="0,16.5"
                     Point3="-4,16.5" />
                   <mssgle:LineSegment
-                    End="-10.5,16.5" />
+                    End="-32,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.5,16.5"
-                    Point2="-14.5,16.5"
-                    Point3="-14.5,20.5" />
+                    Point1="-32,16.5"
+                    Point2="-36,16.5"
+                    Point3="-36,20.5" />
                   <mssgle:LineSegment
-                    End="-14.5,25.5" />
+                    End="-36,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Author.Paths[Lookup No Match Output]"
+          Id="Package\Load shippingMethod.Paths[Lookup No Match Output]"
           TopLeft="387,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119,60"
+              EndConnector="140.5,60"
               Start="0,0"
-              End="119,52.5">
+              End="140.5,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1040,25 +1110,25 @@ where [refTable].[authorId] = ?</property>
                     Point2="0,24.5026178010471"
                     Point3="4,24.5026178010471" />
                   <mssgle:LineSegment
-                    End="115,24.5026178010471" />
+                    End="136.5,24.5026178010471" />
                   <mssgle:CubicBezierSegment
-                    Point1="115,24.5026178010471"
-                    Point2="119,24.5026178010471"
-                    Point3="119,28.5026178010471" />
+                    Point1="136.5,24.5026178010471"
+                    Point2="140.5,24.5026178010471"
+                    Point3="140.5,28.5026178010471" />
                   <mssgle:LineSegment
-                    End="119,52.5" />
+                    End="140.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="3.69361328125,29.5026178010471,111.6127734375,11.609375"
+              BoundingBox="14.44361328125,29.5026178010471,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Author.Paths[Lookup Match Output]"
+          Id="Package\Load shippingMethod.Paths[Lookup Match Output]"
           TopLeft="369.5,251">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1097,7 +1167,7 @@ where [refTable].[authorId] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Author\Load staging">
+    design-time-name="Package\Load shippingMethod\Load staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1110,7 +1180,7 @@ where [refTable].[authorId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Author\Load Author">
+    design-time-name="Package\Load shippingMethod\Load shippingMethod">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1123,22 +1193,22 @@ where [refTable].[authorId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Author\Lookup">
+    design-time-name="Package\Load shippingMethod\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimAuthor]</Value>
+          type="q3:string">[dbo].[DimShippingMethod]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1146,10 +1216,15 @@ where [refTable].[authorId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Author\Get Author">
+    design-time-name="Package\Load shippingMethod\Get shippingMethod">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
