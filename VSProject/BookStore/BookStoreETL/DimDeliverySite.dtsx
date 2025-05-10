@@ -5,46 +5,46 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DEV-1"
   DTS:CreatorName="DEV-1\User"
-  DTS:DTSID="{0E73DF36-5187-49A4-A901-368E2805DD2D}"
+  DTS:DTSID="{2203D06B-B4DB-4088-9B7C-4E9EA6555A65}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="DimDeliverySite"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{D99C7AE3-388A-4D4A-A7A8-1056C6B8D304}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{9D1DA5F2-B315-4E6A-AEBF-B97B8F19AC8D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Source.BookStoreOLTP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A04CFA8F-F8B7-4E42-AACD-C05D2C8ED7DD}"
+      DTS:DTSID="{58574EA1-DA0D-496E-8506-792DF32F7AE9}"
       DTS:ObjectName="Source.BookStoreOLTP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DEV-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A04CFA8F-F8B7-4E42-AACD-C05D2C8ED7DD}DEV-1\MSSQL2022.BookStoreOLTP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DEV-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{58574EA1-DA0D-496E-8506-792DF32F7AE9}DEV-1\MSSQL2022.BookStoreOLTP;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Target.BookStoreDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}"
+      DTS:DTSID="{6CF98189-1023-4C6A-AC6D-8593876EA6E0}"
       DTS:ObjectName="Target.BookStoreDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DEV-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}DEV-1\MSSQL2022.BookStoreDW;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DEV-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{6CF98189-1023-4C6A-AC6D-8593876EA6E0}DEV-1\MSSQL2022.BookStoreDW;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0873B04C-5DB9-4B20-8969-0DCBA16952D9}"
+      DTS:DTSID="{1F98727D-2525-46B9-8301-A8FC02EFD4BB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="dbts">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2FCB56F6-8C27-4ED2-8E7C-F7BEF3B450B9}"
+      DTS:DTSID="{9EB5F15B-5073-4C8E-8434-DB4903B1494B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LastRowVersion">
@@ -66,7 +66,7 @@
       DTS:refId="Package\CleanUp Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{d5967b93-9e72-4c2e-8b1a-62c7a705f1fa}"
+      DTS:DTSID="{8BB76FE5-0E23-4448-8C83-0B3DFDC5D5E9}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="CleanUp Staging"
@@ -75,7 +75,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}"
+          SQLTask:Connection="{6CF98189-1023-4C6A-AC6D-8593876EA6E0}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE staging.deliverySite" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -83,7 +83,7 @@
       DTS:refId="Package\Get DB OLTP RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{d8d4240a-fed8-4ebf-b7d4-b263ac0345cf}"
+      DTS:DTSID="{C174CC94-C359-4782-9BAD-F36D9B0E908E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get DB OLTP RowVersion"
@@ -92,7 +92,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A04CFA8F-F8B7-4E42-AACD-C05D2C8ED7DD}"
+          SQLTask:Connection="{58574EA1-DA0D-496E-8506-792DF32F7AE9}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion] "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -105,7 +105,7 @@
       DTS:refId="Package\Get DW Table LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{53fcd76b-3913-40c4-9d9e-cc870377bee3}"
+      DTS:DTSID="{D738C95D-D331-4527-9E67-00112C616409}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get DW Table LastRowVersion"
@@ -114,7 +114,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}"
+          SQLTask:Connection="{6CF98189-1023-4C6A-AC6D-8593876EA6E0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName = 'DeliverySite'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -127,7 +127,7 @@
       DTS:refId="Package\Load DeliverySites"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{eda93882-38b6-4603-abe2-fb6450f5e675}"
+      DTS:DTSID="{3B3A469F-1C96-4379-B851-13983FAB4535}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load DeliverySites"
@@ -183,7 +183,7 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{2FCB56F6-8C27-4ED2-8E7C-F7BEF3B450B9};"@endRow:Input",{0873B04C-5DB9-4B20-8969-0DCBA16952D9};</property>
+                  name="ParameterMapping">"@startRow:Input",{9EB5F15B-5073-4C8E-8434-DB4903B1494B};"@endRow:Input",{1F98727D-2525-46B9-8301-A8FC02EFD4BB};</property>
               </properties>
               <connections>
                 <connection
@@ -915,7 +915,7 @@ where [refTable].[addressId] = ?</property>
       DTS:refId="Package\Sync Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{67801692-0fe1-46e1-9636-637a821a6abb}"
+      DTS:DTSID="{14A82F01-83B5-4A86-8467-D1F85DCC0CC3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Staging"
@@ -924,7 +924,7 @@ where [refTable].[addressId] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}"
+          SQLTask:Connection="{6CF98189-1023-4C6A-AC6D-8593876EA6E0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeDimDeliverySite] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -932,7 +932,7 @@ where [refTable].[addressId] = ?</property>
       DTS:refId="Package\Update Package Config"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{17ea4e1c-8946-48eb-8a2e-ef188c090c8b}"
+      DTS:DTSID="{E737E608-54F1-4BF8-A6B1-1B82A42634A1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update Package Config"
@@ -941,7 +941,7 @@ where [refTable].[addressId] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{C47FF107-0238-4ECB-B7DD-5EB58C47D5D3}"
+          SQLTask:Connection="{6CF98189-1023-4C6A-AC6D-8593876EA6E0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName = 'DeliverySite' ,@lastRowVersion = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -957,7 +957,7 @@ where [refTable].[addressId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{1b383d11-b2bf-4674-94b4-fac61eb9d0ba}"
+      DTS:DTSID="{FB21E547-B795-499F-AFFB-D44E7DE22267}"
       DTS:From="Package\Get DB OLTP RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -965,7 +965,7 @@ where [refTable].[addressId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{defd8f73-2f3e-4268-8551-b212a6c1f167}"
+      DTS:DTSID="{C533D87A-43B9-43FF-80D8-C0FD4641FB07}"
       DTS:From="Package\Get DW Table LastRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -973,7 +973,7 @@ where [refTable].[addressId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{7e416da3-6480-424d-ba9d-38129430a126}"
+      DTS:DTSID="{DDB87E66-478A-4080-81EC-8060F25E9455}"
       DTS:From="Package\CleanUp Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -981,7 +981,7 @@ where [refTable].[addressId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{02fd2719-6f79-42da-82b4-4027eba7eb56}"
+      DTS:DTSID="{8FBD3298-B3C0-451B-BEED-FD4DFA84F642}"
       DTS:From="Package\Load DeliverySites"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -989,7 +989,7 @@ where [refTable].[addressId] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{8bd531d5-600a-4c68-99cd-8bd7a87f639c}"
+      DTS:DTSID="{33B64F0E-0C37-479C-A30E-4109427D61A7}"
       DTS:From="Package\Sync Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -1008,6 +1008,10 @@ where [refTable].[addressId] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\CleanUp Staging"
+          TopLeft="265.714286279922,183.529411603836" />
+        <NodeLayout
           Size="200,41.6"
           Id="Package\Get DB OLTP RowVersion"
           TopLeft="245.000000521541,26.7647058588926" />
@@ -1015,10 +1019,6 @@ where [refTable].[addressId] = ?</property>
           Size="172,41.6"
           Id="Package\Get DW Table LastRowVersion"
           TopLeft="255.000000542828,100.941176382109" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\CleanUp Staging"
-          TopLeft="265.714286279922,183.529411603836" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Load DeliverySites"
@@ -1263,29 +1263,6 @@ where [refTable].[addressId] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load DeliverySites\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDeliverySite]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load DeliverySites\Load Staging">
     <Properties>
       <Property>
@@ -1295,6 +1272,29 @@ where [refTable].[addressId] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DeliverySites\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDeliverySite]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
