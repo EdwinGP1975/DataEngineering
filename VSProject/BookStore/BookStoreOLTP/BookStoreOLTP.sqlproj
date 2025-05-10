@@ -83,6 +83,8 @@
     <Build Include="Schema\Programmability\GetBookChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\GetCustomerChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\GetPublisherChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\GetAuthorChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\GetShippingMethodChangesByRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\address.data.sql" />

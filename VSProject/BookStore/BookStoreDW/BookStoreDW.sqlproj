@@ -90,6 +90,8 @@
     <Build Include="Schema\Tables\dbo\DimCustomer.sql" />
     <Build Include="Schema\Tables\staging\staging.customer.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimAuthor.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimShippingMethod.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDimBook.sql" />
