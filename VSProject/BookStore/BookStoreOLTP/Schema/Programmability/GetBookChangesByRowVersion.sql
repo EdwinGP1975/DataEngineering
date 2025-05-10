@@ -12,8 +12,8 @@ BEGIN
         ,bk.[publication_date]
         ,bk.[rowversion]
 	    ,bl.[language_name]
-   FROM [BookStore].[dbo].[book] bk
-   inner join [BookStore].[dbo].[book_language] bl on bk.language_id=bl.language_id
+   FROM [dbo].[book] bk
+   inner join [dbo].[book_language] bl on bk.language_id=bl.language_id
    WHERE (bk.[rowversion] > CONVERT(ROWVERSION,@startRow) 
           AND bk.[rowversion] <= CONVERT(ROWVERSION,@endRow))
     OR
