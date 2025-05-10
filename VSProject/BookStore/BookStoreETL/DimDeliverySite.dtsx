@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimDeliverySite"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{9D1DA5F2-B315-4E6A-AEBF-B97B8F19AC8D}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{07885960-F3C1-4D16-BC7B-71F1793C12AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -996,39 +996,39 @@ where [refTable].[addressId] = ?</property>
       DTS:To="Package\Update Package Config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\CleanUp Staging"
           TopLeft="265.714286279922,183.529411603836" />
         <NodeLayout
-          Size="200,41.6"
+          Size="200,42"
           Id="Package\Get DB OLTP RowVersion"
           TopLeft="245.000000521541,26.7647058588926" />
         <NodeLayout
-          Size="172,41.6"
+          Size="172,42"
           Id="Package\Get DW Table LastRowVersion"
           TopLeft="255.000000542828,100.941176382109" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Load DeliverySites"
           TopLeft="272.142857722178,263.823529180514" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Sync Staging"
           TopLeft="282.857143459271,335.705882058683" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Update Package Config"
           TopLeft="277.857143448628,406.95294085272" />
         <EdgeLayout
@@ -1150,19 +1150,19 @@ where [refTable].[addressId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Load DeliverySites\Lookup"
-          TopLeft="234.285714784447,194.235293947392" />
-        <NodeLayout
-          Size="140,41.6"
+          Size="140,42"
           Id="Package\Load DeliverySites\Load Staging"
           TopLeft="95.7142859180364,279.882352695849" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="113,42"
+          Id="Package\Load DeliverySites\Lookup"
+          TopLeft="234.285714784447,194.235293947392" />
+        <NodeLayout
+          Size="158,42"
           Id="Package\Load DeliverySites\Get DeliverySites"
           TopLeft="218.57142903671,98.6470587370614" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Load DeliverySites\Load Delivery Sites"
           TopLeft="351.428572176671,283.705882104262" />
         <EdgeLayout
