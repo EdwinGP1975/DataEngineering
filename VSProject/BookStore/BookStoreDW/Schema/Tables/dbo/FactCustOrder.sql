@@ -16,7 +16,7 @@
 	[orderDate] DATETIME,
 	[statusDate] DATETIME,
 	[statusValue] VARCHAR(20),
-	CONSTRAINT pk_FactCustOrder PRIMARY KEY([orderId],[lineId],[historyId], [statusId]),
+	--CONSTRAINT pk_FactCustOrder PRIMARY KEY([orderId],[lineId],[historyId], [statusId]),
 	CONSTRAINT fk_DimBook FOREIGN KEY([bookSk]) REFERENCES [dbo].[DimBook]([bookSk]),
 	CONSTRAINT fk_DimCustomer FOREIGN KEY([customerSk]) REFERENCES [dbo].[DimCustomer]([customerSk]),
 	CONSTRAINT fk_DimDeliverySite FOREIGN KEY([destDeliverySiteSk]) REFERENCES [dbo].[DimDeliverySite]([deliverySiteSk]),
@@ -24,6 +24,8 @@
 	CONSTRAINT fk_DimAuthor FOREIGN KEY([authorSk]) REFERENCES [dbo].[DimAuthor]([authorSk]),
 	CONSTRAINT fk_DimPublisher FOREIGN KEY([publisherSk]) REFERENCES [dbo].[DimPublisher]([publisherSk]),
 	CONSTRAINT fk_DimDate_orderDate FOREIGN KEY([orderDateKey]) REFERENCES [dbo].[DimDate] ([dateKey]),
-	CONSTRAINT fk_DimDate_statusDate FOREIGN KEY([statusDateKey]) REFERENCES [dbo].[DimDate] ([dateKey])
+	CONSTRAINT fk_DimDate_statusDate FOREIGN KEY([statusDateKey]) REFERENCES [dbo].[DimDate] ([dateKey]),
+	INDEX ix_order NONCLUSTERED ([orderId]),
+	INDEX ix_order_status NONCLUSTERED ([orderId],[statusId])
 )
 GO

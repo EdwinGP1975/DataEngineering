@@ -78,6 +78,8 @@
     <Build Include="Schema\Tables\order_line.sql" />
     <Build Include="Schema\Tables\order_history.sql" />
     <Build Include="Schema\Programmability\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\GetDeliverySiteChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\GetCustOrderChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\GetBookChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\GetCustomerChangesByRowVersion.sql" />
   </ItemGroup>
