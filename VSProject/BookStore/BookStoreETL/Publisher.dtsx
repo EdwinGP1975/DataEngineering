@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Publisher"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{B8841416-A9C9-442B-9DD3-A9166FCACA6F}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{4357CF98-D9CE-4A41-8E91-3099C1B8483B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Publisher-{A668D0E6-37B8-42F1-813D-33152BB346D0}.\SQL2022.BookStore.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA55tAsa07mkGW9rPoWoVYIAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAASvNFf2BdjN6gii2fbUQY2zZHRkdtySv91m95k5w8UYwAAAAAOgAAAAAIAACAAAACFyu6ObByXMsOHgg0bJRXoszuPG4sQ2Q46YgvIX/U3FyAAAADgXJLHVfAleEeN/j22uwnABFgRG/I+bfmu4MjBf0uO0EAAAAAFyLa94O8gMpxYpCKLRshp/cgpK/qkVnNNJgbWdHMpH0bNEbz1dbThP3XJPiAtCSUozh3sL9BXuoE/RRG5o/II</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Publisher-{A668D0E6-37B8-42F1-813D-33152BB346D0}.\SQL2022.BookStore.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,36 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQL2022;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLNCLI11.1;Application Name=SSIS-Publisher-{510A5FAD-A8A9-4363-9938-83B92C876106}.\SQL2022.BookStoreDW.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA55tAsa07mkGW9rPoWoVYIAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAx5YASiu/VN78s62C8lH5JSEZ8WkNrIpbum+R0rT9aKQAAAAAOgAAAAAIAACAAAAClafk6tDn0O/OJ0fxVuSTWhpDHnt6bTeAX87y2pfxlACAAAABHBIS3MIUHfFzc541wUJL3XfLYg8lhHny4Vww946AycUAAAAB5EwBtBbXe1RMwQOAecMlLg8OT5yfx3zMRtM12qZwofIKd4iJEFznq7u8/qZfqt6otesh1acGxzinJsdt2hw0k</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BookTarget.BookStoreDW]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}"
-      DTS:ObjectName="BookTarget.BookStoreDW">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Books-{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}NTBEGP\SQL2022.BookStoreDW.sa;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[NTBEGP\SQL2022.BookStore.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AFC2E1A8-3F56-4C4D-A737-093C6F629983}"
-      DTS:ObjectName="NTBEGP\SQL2022.BookStore.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{AFC2E1A8-3F56-4C4D-A737-093C6F629983}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Publisher-{510A5FAD-A8A9-4363-9938-83B92C876106}.\SQL2022.BookStoreDW.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -224,7 +190,7 @@ where [refTable].[publisherId] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indica si se debe hacer referencia a metadatos en formato XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="publisherSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherName" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publicationDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="publisherSK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherName" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="publicationDate" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -260,11 +226,11 @@ where [refTable].[publisherId] = ?</property>
                       <properties>
                         <property
                           dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">publisherId</property>
                         <property
                           dataType="System.Null"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn" />
                       </properties>
                     </inputColumn>
@@ -283,14 +249,14 @@ where [refTable].[publisherId] = ?</property>
                     <outputColumn
                       refId="Package\Load Publisher\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[publisherSK]"
                       dataType="i4"
-                      errorOrTruncationOperation="Copiar columna"
+                      errorOrTruncationOperation="Copy Column"
                       lineageId="Package\Load Publisher\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[publisherSK]"
                       name="publisherSK"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          description="Specifies the column in the reference table from which a column is copied."
                           name="CopyFromReferenceColumn">publisherSK</property>
                       </properties>
                     </outputColumn>
@@ -423,10 +389,11 @@ where [refTable].[publisherId] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].ExternalColumns[publication_date]"
+                      length="10"
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]"
                       name="publication_date"
                       truncationRowDisposition="FailComponent" />
@@ -461,7 +428,8 @@ where [refTable].[publisherId] = ?</property>
                       name="title" />
                     <externalMetadataColumn
                       refId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].ExternalColumns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publication_date" />
                     <externalMetadataColumn
                       refId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].ExternalColumns[rowversion]"
@@ -496,7 +464,8 @@ where [refTable].[publisherId] = ?</property>
                       name="title" />
                     <outputColumn
                       refId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de error de origen de OLE DB].Columns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de error de origen de OLE DB].Columns[publication_date]"
                       name="publication_date" />
                     <outputColumn
@@ -618,7 +587,8 @@ where [refTable].[publisherId] = ?</property>
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publisher_name]" />
                     <inputColumn
                       refId="Package\Load Publisher\Load Publisher.Inputs[Entrada de destino de OLE DB].Columns[publication_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="publication_date"
                       externalMetadataColumnId="Package\Load Publisher\Load Publisher.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]" />
@@ -647,7 +617,8 @@ where [refTable].[publisherId] = ?</property>
                       name="title" />
                     <externalMetadataColumn
                       refId="Package\Load Publisher\Load Publisher.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publicationDate" />
                   </externalMetadataColumns>
                 </input>
@@ -715,7 +686,7 @@ where [refTable].[publisherId] = ?</property>
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -773,7 +744,8 @@ where [refTable].[publisherId] = ?</property>
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publisher_name]" />
                     <inputColumn
                       refId="Package\Load Publisher\Load Staging.Inputs[Entrada de destino de OLE DB].Columns[publication_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="publication_date"
                       externalMetadataColumnId="Package\Load Publisher\Load Staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
                       lineageId="Package\Load Publisher\Get Publisher Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]" />
@@ -798,7 +770,8 @@ where [refTable].[publisherId] = ?</property>
                       name="title" />
                     <externalMetadataColumn
                       refId="Package\Load Publisher\Load Staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publicationDate" />
                   </externalMetadataColumns>
                 </input>
@@ -934,12 +907,12 @@ where [refTable].[publisherId] = ?</property>
       DTS:To="Package\Update Config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -1122,9 +1095,7 @@ where [refTable].[publisherId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.73359375,17.8807035192553,27.4671875,9.7978515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1159,7 +1130,7 @@ where [refTable].[publisherId] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="8.91097000598937,41.3803769876103,250.7248046875,12.1953125"
+              BoundingBox="8.91097000598937,41.3803769876103,213.778046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1169,33 +1140,33 @@ where [refTable].[publisherId] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-232.366652506425,87.5333324353562"
+              EndConnector="-232.366652506424,87.533332435356"
               Start="0,0"
-              End="-232.366652506425,80.0333324353562">
+              End="-232.366652506424,80.033332435356">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6739618981829" />
+                    End="0,31.6739618981828" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.6739618981829"
-                    Point2="0,35.6739618981829"
-                    Point3="-4,35.6739618981829" />
+                    Point1="0,31.6739618981828"
+                    Point2="0,35.6739618981828"
+                    Point3="-4,35.6739618981828" />
                   <mssgle:LineSegment
-                    End="-228.366652506425,35.6739618981829" />
+                    End="-228.366652506424,35.6739618981828" />
                   <mssgle:CubicBezierSegment
-                    Point1="-228.366652506425,35.6739618981829"
-                    Point2="-232.366652506425,35.6739618981829"
-                    Point3="-232.366652506425,39.6739618981829" />
+                    Point1="-228.366652506424,35.6739618981828"
+                    Point2="-232.366652506424,35.6739618981828"
+                    Point3="-232.366652506424,39.6739618981828" />
                   <mssgle:LineSegment
-                    End="-232.366652506425,80.0333324353562" />
+                    End="-232.366652506424,80.033332435356" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-216.002349690712,40.6739618981829,236.5848046875,12.1953125"
+              BoundingBox="-216.002349690712,40.6739618981828,199.638046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

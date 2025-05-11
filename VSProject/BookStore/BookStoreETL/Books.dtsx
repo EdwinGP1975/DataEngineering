@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Books"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{2D9DF829-1E4E-429A-926E-8FA52D3733B9}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{B01D84BB-9C65-47C1-BAEC-BB324AF8E49F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{9557032F-8EC9-4050-8B0D-AAEFF02D2961}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Books-{9557032F-8EC9-4050-8B0D-AAEFF02D2961}BookSource.BookStore;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,19 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Books-{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}NTBEGP\SQL2022.BookStoreDW.sa;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[NTBEGP\SQL2022.BookStore.sa]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AFC2E1A8-3F56-4C4D-A737-093C6F629983}"
-      DTS:ObjectName="NTBEGP\SQL2022.BookStore.sa">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=NTBEGP\SQL2022;User ID=sa;Initial Catalog=BookStore;Provider=SQLNCLI11.1;Application Name=SSIS-Books-{AFC2E1A8-3F56-4C4D-A737-093C6F629983}NTBEGP\SQL2022.BookStore.sa;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Books-{9BBE8A81-FDDF-4FF6-930D-0F06DE61D13B}BookTarget.BookStoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -408,7 +396,8 @@ where [refTable].[bookId] = ?</property>
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[num_pages]" />
                     <inputColumn
                       refId="Package\Load Books\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[publication_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="publication_date"
                       externalMetadataColumnId="Package\Load Books\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]" />
@@ -449,7 +438,8 @@ where [refTable].[bookId] = ?</property>
                       name="numPages" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publicationDate" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[languageName]"
@@ -536,8 +526,8 @@ where [refTable].[bookId] = ?</property>
               <connections>
                 <connection
                   refId="Package\Load Books\Get Book Data.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[NTBEGP\SQL2022.BookStore.sa]"
-                  connectionManagerRefId="Package.ConnectionManagers[NTBEGP\SQL2022.BookStore.sa]"
+                  connectionManagerID="Package.ConnectionManagers[BookSource.BookStore]"
+                  connectionManagerRefId="Package.ConnectionManagers[BookSource.BookStore]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -588,10 +578,11 @@ where [refTable].[bookId] = ?</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].ExternalColumns[publication_date]"
+                      length="10"
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]"
                       name="publication_date"
                       truncationRowDisposition="FailComponent" />
@@ -641,7 +632,8 @@ where [refTable].[bookId] = ?</property>
                       name="num_pages" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].ExternalColumns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publication_date" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].ExternalColumns[rowversion]"
@@ -687,7 +679,8 @@ where [refTable].[bookId] = ?</property>
                       name="num_pages" />
                     <outputColumn
                       refId="Package\Load Books\Get Book Data.Outputs[Salida de error de origen de OLE DB].Columns[publication_date]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de error de origen de OLE DB].Columns[publication_date]"
                       name="publication_date" />
                     <outputColumn
@@ -822,7 +815,8 @@ where [refTable].[bookId] = ?</property>
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[num_pages]" />
                     <inputColumn
                       refId="Package\Load Books\Load Staging.Inputs[Entrada de destino de OLE DB].Columns[publication_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="wstr"
+                      cachedLength="10"
                       cachedName="publication_date"
                       externalMetadataColumnId="Package\Load Books\Load Staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
                       lineageId="Package\Load Books\Get Book Data.Outputs[Salida de origen de OLE DB].Columns[publication_date]" />
@@ -859,7 +853,8 @@ where [refTable].[bookId] = ?</property>
                       name="numPages" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Load Staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[publicationDate]"
-                      dataType="dbDate"
+                      dataType="wstr"
+                      length="10"
                       name="publicationDate" />
                     <externalMetadataColumn
                       refId="Package\Load Books\Load Staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[languageName]"
@@ -1001,39 +996,39 @@ where [refTable].[bookId] = ?</property>
       DTS:To="Package\Update Config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Clean-up Staging Area"
           TopLeft="321.666649091576,202.799998589754" />
         <NodeLayout
-          Size="183,42"
+          Size="183.2,41.6"
           Id="Package\Get Book Row Version"
           TopLeft="313.333316213555,117.866665847037" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Get Database Row Version"
           TopLeft="309.999983062347,39.8666663894389" />
         <NodeLayout
-          Size="137,42"
+          Size="136.8,41.6"
           Id="Package\Load Books"
           TopLeft="339.99998142322,283.399998029272" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Sync Staging"
           TopLeft="339.99998142322,367.466664906873" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Update Config"
           TopLeft="341.666647998824,456.599997414549" />
         <EdgeLayout
@@ -1155,19 +1150,19 @@ where [refTable].[bookId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169,42"
+          Size="168.8,41.6"
           Id="Package\Load Books\Destino de OLE DB"
           TopLeft="606.999990954995,287.999995708465" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Load Books\Load Staging"
           TopLeft="178.999997332692,284.999995753169" />
         <NodeLayout
-          Size="126,42"
+          Size="126.4,41.6"
           Id="Package\Load Books\Búsqueda"
           TopLeft="417.999993771315,153.999997705221" />
         <NodeLayout
-          Size="146,42"
+          Size="145.6,41.6"
           Id="Package\Load Books\Get Book Data"
           TopLeft="406.999993935228,70.9999989420176" />
         <EdgeLayout

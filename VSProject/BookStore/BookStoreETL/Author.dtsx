@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{619F9231-BE03-4390-9A37-FD77CD9369AF}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{879C6754-60BB-4317-9F2C-784AD69F1BD3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C6F3E457-25C1-437C-9D44-3617A974B980}Source.BookStoreOLTP;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C6F3E457-25C1-437C-9D44-3617A974B980}Source.BookStoreOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{F1E043D8-D237-4556-A609-8DFC2B7BE78C}Target.BookStoreDW;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{F1E043D8-D237-4556-A609-8DFC2B7BE78C}Target.BookStoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -603,7 +603,7 @@ where [refTable].[authorId] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load Author\14:invalid};</property>
+                  name="ParameterMap">#{Package\Load Author\98:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -809,39 +809,39 @@ where [refTable].[authorId] = ?</property>
       DTS:To="Package\Update config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\clean-up staging"
           TopLeft="278,239" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Get Database Row Version"
           TopLeft="255,70" />
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Get DB RowVersion Author"
           TopLeft="255,155" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Load Author"
           TopLeft="284,307" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Sync Staging"
           TopLeft="281,384" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Update config"
           TopLeft="270,465" />
         <EdgeLayout
@@ -975,19 +975,19 @@ where [refTable].[authorId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Load Author\Load staging"
           TopLeft="142,303" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\Load Author\Load Author"
           TopLeft="438,311" />
         <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Load Author\Lookup"
           TopLeft="313,209" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Load Author\Get Author"
           TopLeft="319,134" />
         <EdgeLayout

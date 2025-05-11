@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{E4E750EF-55F8-4270-9806-4216615BFA09}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{EB85C889-047A-4123-A7AB-CDDDB7981CBF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}localhost.BookStoreDW;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}localhost.BookStoreDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=IDALIA-PSC;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{98063E68-0E05-49B5-8057-9D4470B4785F}localhost.BookStoreOLTP;" />
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{98063E68-0E05-49B5-8057-9D4470B4785F}localhost.BookStoreOLTP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -779,7 +779,7 @@ where [refTable].[shippingMethodId] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{478EC1C5-BB8B-44EF-A1E9-CBCD94881B1F}"
-          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='shipping_method', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='ShippingMethod', @lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::dbts"
@@ -833,39 +833,39 @@ where [refTable].[shippingMethodId] = ?</property>
       DTS:To="Package\Update config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\clean-up staging"
           TopLeft="83,229" />
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Get Database Row Version"
           TopLeft="60,60" />
         <NodeLayout
-          Size="249,42"
+          Size="248.8,41.6"
           Id="Package\Get DB RowVersion ShippingMtehod"
           TopLeft="60,145" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Load shippingMethod"
           TopLeft="89,297" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Sync Staging"
           TopLeft="86,374" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Update config"
           TopLeft="75,455" />
         <EdgeLayout
@@ -1047,19 +1047,19 @@ where [refTable].[shippingMethodId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\Load shippingMethod\Load staging"
           TopLeft="142,303" />
         <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Load shippingMethod\Lookup"
           TopLeft="313,209" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Load shippingMethod\Get shippingMethod"
           TopLeft="319,134" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Load shippingMethod\Load shippingMethod"
           TopLeft="438,311" />
         <EdgeLayout

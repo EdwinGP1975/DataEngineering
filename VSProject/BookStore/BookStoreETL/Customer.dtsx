@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Customer"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{24EA4541-7A88-4FC8-B121-4FCFC24644F6}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{633B70D6-BD7B-4E7B-A473-B2EE459321C0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARI;User ID=sa;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Customer-{5AC2AA3D-B7B3-409F-84DA-24A3CEE43DE7}ARI.BookStoreOLTP.sa;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAupUCARC00UG96Y5ebUhTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCPGs+eHO90ktc5OC2pRKNYPezt2NQvQpKHD+TEkHlLQAAAAAOgAAAAAIAACAAAADNzlZckKdjunDS78TC6zrqbm3ZHbsWml4kkFwWcu9HvRAAAAB+nn5xo2yQQurEZNzeAiS+QAAAAGFUxJudKzR5kk7ljIWk/eOP2hV49WxKiijB4I7WzYROddsiq0r+1f2E1cPF9VCv67lzuOZ3zNmsQ/jnagOKwJ0</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreOLTP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Customer-{5AC2AA3D-B7B3-409F-84DA-24A3CEE43DE7}ARI.BookStoreOLTP.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,12 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ARI;User ID=sa;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Customer-{41D311D7-9DBF-4283-A51A-B56E2C1E5638}ARI.BookStoreDW.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAupUCARC00UG96Y5ebUhTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADr8AXFXt36rDwloi1jmf5HxTYYe5YDc2P9wIYJswly+QAAAAAOgAAAAAIAACAAAAC3JaAPMMmXJ8Np6MouXfcM51VqRPZ3cgD6rOK3hWtlpBAAAADr4RhyXK5QX/sXUNvMlhDsQAAAABCIkIQ/9lKgcD2/oTeiRbEn7Fz3F6hDBvooFccF6db1jZ/LIqwOvg59/vSOdLRkSKn7FtSURLtwXswZk65UPGI</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=Dev-1\MSSQL2022;Initial Catalog=BookStoreDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Customer-{41D311D7-9DBF-4283-A51A-B56E2C1E5638}ARI.BookStoreDW.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -902,25 +892,41 @@ where [refTable].[customerId] = ?</property>
       DTS:To="Package\Update config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="177,42"
+          Size="176,41.6"
+          Id="Package\Clean up"
+          TopLeft="367,194" />
+        <NodeLayout
+          Size="176.8,41.6"
           Id="Package\Get DB RowVersion"
           TopLeft="354,20" />
         <NodeLayout
-          Size="180,42"
+          Size="180,41.6"
           Id="Package\Get LastRowVersion"
           TopLeft="360,108" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Sync staging"
+          TopLeft="366.666666666667,373.333333333333" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="362.5,286.25" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Update config"
+          TopLeft="363.333333333333,463.333333333333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
           TopLeft="446.25,62">
@@ -943,10 +949,6 @@ where [refTable].[customerId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Clean up"
-          TopLeft="367,194" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
           TopLeft="452.5,150">
@@ -969,10 +971,6 @@ where [refTable].[customerId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Tarea Flujo de datos"
-          TopLeft="362.5,286.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 2]"
           TopLeft="453.75,236">
@@ -995,10 +993,6 @@ where [refTable].[customerId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Sync staging"
-          TopLeft="366.666666666667,373.333333333333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
           TopLeft="452.5,328.25">
@@ -1033,10 +1027,6 @@ where [refTable].[customerId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Update config"
-          TopLeft="363.333333333333,463.333333333333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 4]"
           TopLeft="437.25,415.333333333333">
@@ -1068,13 +1058,21 @@ where [refTable].[customerId] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131,42"
+          Size="131.2,41.6"
           Id="Package\Tarea Flujo de datos\Get Stores"
           TopLeft="469,53" />
         <NodeLayout
-          Size="129,42"
+          Size="144,41.6"
+          Id="Package\Tarea Flujo de datos\Load Staging"
+          TopLeft="199,224" />
+        <NodeLayout
+          Size="128.8,41.6"
           Id="Package\Tarea Flujo de datos\Búsqueda"
           TopLeft="458,139" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Tarea Flujo de datos\Load Store"
+          TopLeft="686,227" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
           TopLeft="534.5,95">
@@ -1109,50 +1107,6 @@ where [refTable].[customerId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Tarea Flujo de datos\Load Staging"
-          TopLeft="199,224" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="522.5,181">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-251.5,43"
-              Start="0,0"
-              End="-251.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="-4,21.5" />
-                  <mssgle:LineSegment
-                    End="-247.5,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-247.5,21.5"
-                    Point2="-251.5,21.5"
-                    Point3="-251.5,25.5" />
-                  <mssgle:LineSegment
-                    End="-251.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-225.5690234375,26.5,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Tarea Flujo de datos\Load Store"
-          TopLeft="686,227" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de entradas no coincidentes de búsqueda]"
           TopLeft="542.666666666667,181">
@@ -1189,35 +1143,48 @@ where [refTable].[customerId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="522.5,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-251.5,43"
+              Start="0,0"
+              End="-251.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="-4,21.5" />
+                  <mssgle:LineSegment
+                    End="-247.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-247.5,21.5"
+                    Point2="-251.5,21.5"
+                    Point3="-251.5,25.5" />
+                  <mssgle:LineSegment
+                    End="-251.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-225.5690234375,26.5,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Get Stores">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Búsqueda">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCustomer]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -1233,6 +1200,29 @@ where [refTable].[customerId] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
