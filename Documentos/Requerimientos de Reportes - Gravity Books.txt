@@ -1,17 +1,21 @@
-1) Libros Más Vendidos (Best Seller Books)
+1) Desempeño de Ventas en los últimos 12 meses (Orders performance)
+La Gerencia general requiere evaluar el desempeño de ventas por año para los últimos 12 meses. 
+
+2) Libros Más Vendidos (Best Seller Books)
 El área de Abastecimiento requiere un reporte que detalle los libros más vendidos en la última gestión, con el fin de optimizar el plan de aprovisionamiento y asegurar la disponibilidad de títulos con alta demanda.
 
-2) Desempeño del Staff de Ventas (Staff Performance)
-La Gerencia Comercial necesita un reporte que permita monitorear y analizar el desempeño individual del equipo de ventas durante la última gestión, con el fin de tomar decisiones estratégicas de reconocimiento, capacitación y mejora de resultados.
+3) Paises con mayores compras (Contry Performance)
+La Gerencia Comercial necesita un reporte que permita evaluar los paises desde donde se realizan las mayores cantidades de compras, para lanzar campañas de marketing en función a las necesidades de expansión.
 
-3) Ranking de Tiendas (Store Ranking)
-El área de Marketing requiere un reporte que identifique y clasifique las tiendas con mayores volúmenes de venta en los últimos 3 años, con el objetivo de evaluar oportunidades de expansión y replicar estrategias exitosas.
+4) Ranking de Autores (Author Ranking)
+El área de Marketing requiere un reporte que identifique los autores que generan mayores cantidades de ventas en los últimos 3 años, con el objetivo de generar planes de incentivo y bonificaciones.
 
-4) Desempeño de Clientes (Customer Performance)
+5) Desempeño de Clientes (Customer Performance)
 El área Administrativa solicita un reporte que permita identificar a los clientes con mayor cantidad de libros comprados en los últimos 6 meses, con el propósito de diseñar e implementar un plan de fidelización e incentivos.
 
-5) Desempeño de los Métodos de Envío (Shipping Method Performance)
+6) Desempeño de los Métodos de Envío (Shipping Method Performance)
 El área de Logística requiere un reporte comparativo sobre el nivel de uso de los distintos métodos de envío disponibles, con el objetivo de evaluar su rendimiento y planificar estrategias promocionales, como descuentos específicos por método.
 
-6) Ranking de Editoriales (Ranking of Publishers)
+7) Ranking de Editoriales (Ranking of Publishers)
 La Gerencia Comercial necesita un reporte que presente un ranking de las 10 editoriales con mayores volúmenes de venta, con el fin de fortalecer los acuerdos comerciales y ampliar la oferta de títulos disponibles por editorial.
+
