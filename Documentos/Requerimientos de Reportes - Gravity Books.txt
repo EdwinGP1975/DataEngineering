@@ -1,4 +1,4 @@
-1) Desempeño de Ventas en los últimos 12 meses (Orders performance)
+1) Desempeño de Ventas mensuales en las gestiones 2023, 2024 y 2025 (Orders performance)
 La Gerencia general requiere evaluar el desempeño de ventas por año para los últimos 12 meses. 
 
 2) Libros Más Vendidos (Best Seller Books)
@@ -7,15 +7,11 @@ El área de Abastecimiento requiere un reporte que detalle los libros más vendi
 3) Paises con mayores compras (Contry Performance)
 La Gerencia Comercial necesita un reporte que permita evaluar los paises desde donde se realizan las mayores cantidades de compras, para lanzar campañas de marketing en función a las necesidades de expansión.
 
-4) Ranking de Autores (Author Ranking)
-El área de Marketing requiere un reporte que identifique los autores que generan mayores cantidades de ventas en los últimos 3 años, con el objetivo de generar planes de incentivo y bonificaciones.
-
-5) Desempeño de Clientes (Customer Performance)
+4) Desempeño de Clientes (Customer Performance)
 El área Administrativa solicita un reporte que permita identificar a los clientes con mayor cantidad de libros comprados en los últimos 6 meses, con el propósito de diseñar e implementar un plan de fidelización e incentivos.
 
-6) Desempeño de los Métodos de Envío (Shipping Method Performance)
+5) Ranking de los Métodos de Envío (Shipping Method Performance)
 El área de Logística requiere un reporte comparativo sobre el nivel de uso de los distintos métodos de envío disponibles, con el objetivo de evaluar su rendimiento y planificar estrategias promocionales, como descuentos específicos por método.
 
-7) Ranking de Editoriales (Ranking of Publishers)
+6) Ranking de Editoriales (Ranking of Publishers)
 La Gerencia Comercial necesita un reporte que presente un ranking de las 10 editoriales con mayores volúmenes de venta, con el fin de fortalecer los acuerdos comerciales y ampliar la oferta de títulos disponibles por editorial.
-
