@@ -24,7 +24,7 @@ BEGIN
 		 )
 
 	SELECT co.[order_id]
-	  ,ol.[line_id]
+	  --,ol.[line_id]
 	  ,lhs.[history_id]
 	  ,orderDateKey = CONVERT(INT,
 						(CONVERT(CHAR(4),DATEPART(YEAR,co.[order_date]))
@@ -68,7 +68,7 @@ BEGIN
 		OR (b.[rowversion] > CONVERT(ROWVERSION,@startRow)
 			AND b.[rowversion] <= CONVERT(ROWVERSION,@endRow))
 	GROUP BY co.[order_id]
-	  ,ol.[line_id]
+	  --,ol.[line_id]
 	  ,lhs.[history_id]	
 	  ,ol.[book_id]
 	  ,co.[customer_id]
