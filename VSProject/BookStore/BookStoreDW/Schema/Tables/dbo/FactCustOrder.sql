@@ -1,7 +1,6 @@
 ﻿CREATE TABLE [dbo].[FactCustOrder]
 (
 	[orderId] INT NOT NULL,
-	[lineId] INT NOT NULL,
 	[historyId] INT NOT NULL,
 	[orderDateKey] INT NOT NULL,
 	[statusDateKey] INT NOT NULL,
@@ -16,7 +15,7 @@
 	[lastStatusId] INT NOT NULL,
 	[lastStatusDate] DATETIME NOT NULL,
 	[lastOrderStatus] VARCHAR(20) NOT NULL,
-	--CONSTRAINT pk_FactCustOrder PRIMARY KEY([orderId],[lineId],[historyId]),
+	--CONSTRAINT pk_FactCustOrder PRIMARY KEY([orderId],[historyId]),
 	CONSTRAINT fk_DimBook FOREIGN KEY([bookSk]) REFERENCES [dbo].[DimBook]([bookSk]),
 	CONSTRAINT fk_DimCustomer FOREIGN KEY([customerSk]) REFERENCES [dbo].[DimCustomer]([customerSk]),
 	CONSTRAINT fk_DimDeliverySite FOREIGN KEY([destDeliverySiteSk]) REFERENCES [dbo].[DimDeliverySite]([deliverySiteSk]),
@@ -25,6 +24,5 @@
 	CONSTRAINT fk_DimDate_orderDate FOREIGN KEY([orderDateKey]) REFERENCES [dbo].[DimDate] ([dateKey]),
 	CONSTRAINT fk_DimDate_statusDate FOREIGN KEY([statusDateKey]) REFERENCES [dbo].[DimDate] ([dateKey]),
 	INDEX ix_order NONCLUSTERED ([orderId]),
-	INDEX ix_order_status NONCLUSTERED ([orderId],[lineId])
 )
 GO

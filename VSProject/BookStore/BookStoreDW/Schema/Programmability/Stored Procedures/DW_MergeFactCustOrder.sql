@@ -18,7 +18,6 @@ BEGIN
 	FROM [dbo].[FactCustOrder] fco
 		JOIN [staging].[custOrder] co ON (
 				co.[orderId] =fco.[orderId] 
-			AND co.[lineId] = fco.[lineId] 
 			AND co.[historyId] = fco.[historyId])
 END
 GO

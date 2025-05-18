@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CustOrder"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{8D540EAE-D8A3-41DC-B959-6ED958D8284D}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{94029ADE-F6B2-4326-AD3B-815ABAE18656}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -208,15 +208,6 @@
                       name="order_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].ExternalColumns[line_id]"
-                      lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]"
-                      name="line_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[history_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -354,10 +345,6 @@
                       dataType="i4"
                       name="order_id" />
                     <externalMetadataColumn
-                      refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].ExternalColumns[line_id]"
-                      dataType="i4"
-                      name="line_id" />
-                    <externalMetadataColumn
                       refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].ExternalColumns[history_id]"
                       dataType="i4"
                       name="history_id" />
@@ -429,11 +416,6 @@
                       dataType="i4"
                       lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Error Output].Columns[order_id]"
                       name="order_id" />
-                    <outputColumn
-                      refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Error Output].Columns[line_id]"
-                      dataType="i4"
-                      lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Error Output].Columns[line_id]"
-                      name="line_id" />
                     <outputColumn
                       refId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Error Output].Columns[history_id]"
                       dataType="i4"
@@ -648,12 +630,6 @@
                       externalMetadataColumnId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].ExternalColumns[orderId]"
                       lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[order_id]" />
                     <inputColumn
-                      refId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].Columns[line_id]"
-                      cachedDataType="i4"
-                      cachedName="line_id"
-                      externalMetadataColumnId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].ExternalColumns[lineId]"
-                      lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]" />
-                    <inputColumn
                       refId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].Columns[history_id]"
                       cachedDataType="i4"
                       cachedName="history_id"
@@ -704,10 +680,6 @@
                       refId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].ExternalColumns[orderId]"
                       dataType="i4"
                       name="orderId" />
-                    <externalMetadataColumn
-                      refId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].ExternalColumns[lineId]"
-                      dataType="i4"
-                      name="lineId" />
                     <externalMetadataColumn
                       refId="Package\Load CustOrder\Load CustOrder.Inputs[OLE DB Destination Input].ExternalColumns[historyId]"
                       dataType="i4"
@@ -913,12 +885,6 @@
                       externalMetadataColumnId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[orderId]"
                       lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[order_id]" />
                     <inputColumn
-                      refId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].Columns[line_id]"
-                      cachedDataType="i4"
-                      cachedName="line_id"
-                      externalMetadataColumnId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[lineId]"
-                      lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]" />
-                    <inputColumn
                       refId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].Columns[history_id]"
                       cachedDataType="i4"
                       cachedName="history_id"
@@ -975,10 +941,6 @@
                       refId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[orderId]"
                       dataType="i4"
                       name="orderId" />
-                    <externalMetadataColumn
-                      refId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[lineId]"
-                      dataType="i4"
-                      name="lineId" />
                     <externalMetadataColumn
                       refId="Package\Load CustOrder\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[historyId]"
                       dataType="i4"
@@ -1404,7 +1366,7 @@ where [refTable].[customerId] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[FactCustOrder]) [refTable]
-where [refTable].[orderId] = ? and [refTable].[lineId] = ? and [refTable].[historyId] = ?</property>
+where [refTable].[orderId] = ? and [refTable].[historyId] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1435,12 +1397,12 @@ where [refTable].[orderId] = ? and [refTable].[lineId] = ? and [refTable].[histo
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="orderId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lineId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="historyId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="orderDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="statusDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="bookSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="customerSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="destDeliverySiteSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shippingMethodSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="price" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;referenceColumn name="quantity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="orderDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastStatusId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastStatusDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastOrderStatus" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="orderId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="historyId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="orderDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="statusDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="bookSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="customerSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="destDeliverySiteSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shippingMethodSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publisherSk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="price" dataType="DT_NUMERIC" length="0" precision="5" scale="2" codePage="0"/&gt;&lt;referenceColumn name="quantity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="orderDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastStatusId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastStatusDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lastOrderStatus" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[order_id]};#{Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]};#{Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[history_id]};</property>
+                  name="ParameterMap">#{Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[order_id]};#{Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[history_id]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1473,22 +1435,6 @@ where [refTable].[orderId] = ? and [refTable].[lineId] = ? and [refTable].[histo
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">orderId</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load CustOrder\Lookup CustOrder.Inputs[Lookup Input].Columns[line_id]"
-                      cachedDataType="i4"
-                      cachedName="line_id"
-                      lineageId="Package\Load CustOrder\Get CustOrder.Outputs[OLE DB Source Output].Columns[line_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">lineId</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -2318,25 +2264,25 @@ where [refTable].[shippingMethodId] = ?</property>
           Id="Package\Load CustOrder\Load CustOrder"
           TopLeft="337.857143576352,587.670587985944" />
         <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\Load CustOrder\Lookup CustOrder"
-          TopLeft="168.571428930273,491.082352650269" />
+          Size="140,41.6"
+          Id="Package\Load CustOrder\Load Staging"
+          TopLeft="40.7142858009557,587.45882323046" />
         <NodeLayout
           Size="139.2,41.6"
           Id="Package\Load CustOrder\Lookup Book"
           TopLeft="165.000000351242,86.4117646301391" />
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\Load CustOrder\Load Staging"
-          TopLeft="40.7142858009557,587.45882323046" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Load CustOrder\Lookup DeliverySite"
-          TopLeft="157.857143193179,243.176470375082" />
+          Size="163.2,41.6"
+          Id="Package\Load CustOrder\Lookup CustOrder"
+          TopLeft="168.571428930273,491.082352650269" />
         <NodeLayout
           Size="191.2,41.6"
           Id="Package\Load CustOrder\Lookup ShippingMethod"
           TopLeft="149.285714603504,320.411764425029" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load CustOrder\Lookup DeliverySite"
+          TopLeft="157.857143193179,243.176470375082" />
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Load CustOrder\Lookup Publisher"
@@ -2349,6 +2295,90 @@ where [refTable].[shippingMethodId] = ?</property>
           Size="160.8,41.6"
           Id="Package\Load CustOrder\Lookup Customer"
           TopLeft="159.285714624792,168.235293970182" />
+        <EdgeLayout
+          Id="Package\Load CustOrder.Paths[Lookup Match Output5]"
+          TopLeft="244.18571461947,362.011764425029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.0352940955273"
+              Start="0,0"
+              End="0,34.5352940955273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5352940955273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.4629595477636,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CustOrder.Paths[Lookup Match Output4]"
+          TopLeft="250.171428930273,532.682352650269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139.457143129317,54.7764705801917"
+              Start="0,0"
+              End="-139.457143129317,47.2764705801917">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3882352900958" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3882352900958"
+                    Point2="0,27.3882352900958"
+                    Point3="-4,27.3882352900958" />
+                  <mssgle:LineSegment
+                    End="-135.457143129317,27.3882352900958" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135.457143129317,27.3882352900958"
+                    Point2="-139.457143129317,27.3882352900958"
+                    Point3="-139.457143129317,31.3882352900958" />
+                  <mssgle:LineSegment
+                    End="-139.457143129317,47.2764705801917" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.919958283409,32.3882352900958,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CustOrder.Paths[Lookup Match Output3]"
+          TopLeft="246.828571782854,445.647058520556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.4352941297125"
+              Start="0,0"
+              End="0,37.9352941297125">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9352941297125" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.1629595648563,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load CustOrder.Paths[Lookup Match Output2]"
           TopLeft="244.171428898342,284.776470375082">
@@ -2479,90 +2509,6 @@ where [refTable].[shippingMethodId] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load CustOrder.Paths[Lookup Match Output4]"
-          TopLeft="250.171428930273,532.682352650269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-139.457143129317,54.7764705801917"
-              Start="0,0"
-              End="-139.457143129317,47.2764705801917">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.3882352900958" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.3882352900958"
-                    Point2="0,27.3882352900958"
-                    Point3="-4,27.3882352900958" />
-                  <mssgle:LineSegment
-                    End="-135.457143129317,27.3882352900958" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-135.457143129317,27.3882352900958"
-                    Point2="-139.457143129317,27.3882352900958"
-                    Point3="-139.457143129317,31.3882352900958" />
-                  <mssgle:LineSegment
-                    End="-139.457143129317,47.2764705801917" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.919958283409,32.3882352900958,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load CustOrder.Paths[Lookup Match Output3]"
-          TopLeft="246.828571782854,445.647058520556">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.4352941297125"
-              Start="0,0"
-              End="0,37.9352941297125">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.9352941297125" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.1629595648562,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load CustOrder.Paths[Lookup Match Output5]"
-          TopLeft="244.18571461947,362.011764425029">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.0352940955273"
-              Start="0,0"
-              End="0,34.5352940955273">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5352940955273" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,11.4629595477636,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2580,25 +2526,15 @@ where [refTable].[shippingMethodId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load CustOrder\Lookup CustOrder">
+    design-time-name="Package\Load CustOrder\Load Staging">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[FactCustOrder]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2626,35 +2562,22 @@ where [refTable].[shippingMethodId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load CustOrder\Load Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load CustOrder\Lookup DeliverySite">
+    design-time-name="Package\Load CustOrder\Lookup CustOrder">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimDeliverySite]</Value>
+          type="q3:string">[dbo].[FactCustOrder]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2685,7 +2608,7 @@ where [refTable].[shippingMethodId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load CustOrder\Lookup Publisher">
+    design-time-name="Package\Load CustOrder\Lookup DeliverySite">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -2695,12 +2618,35 @@ where [refTable].[shippingMethodId] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimPublisher]</Value>
+          type="q3:string">[dbo].[DimDeliverySite]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CustOrder\Lookup Publisher">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPublisher]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

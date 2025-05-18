@@ -1,7 +1,6 @@
 ﻿CREATE TABLE [staging].[custOrder]
 (
 	[orderId] INT NOT NULL,
-	[lineId] INT NOT NULL,
 	[historyId] INT NOT NULL,
 	[orderDateKey] INT NOT NULL,
 	[statusDateKey] INT NOT NULL,
