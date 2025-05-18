@@ -15,8 +15,8 @@ GO
 
 DELETE FROM dbo.customer_address;
 GO
-DBCC CHECKIDENT ('dbo.customer_address', RESEED);
-GO
+--DBCC CHECKIDENT ('dbo.customer_address', RESEED);
+--GO
 
 DELETE FROM dbo.[address];
 GO
@@ -30,8 +30,8 @@ GO
 
 DELETE FROM dbo.book_author;
 GO
-DBCC CHECKIDENT ('dbo.book_author', RESEED);
-GO
+--DBCC CHECKIDENT ('dbo.book_author', RESEED);
+--GO
 
 DELETE FROM dbo.author;
 GO
