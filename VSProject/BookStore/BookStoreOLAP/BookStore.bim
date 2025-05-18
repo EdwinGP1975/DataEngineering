@@ -3,6 +3,56 @@
   "compatibilityLevel": 1200,
   "model": {
     "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW",
+        "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
+        "impersonationMode": "impersonateAccount",
+        "account": "User2",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 2",
+        "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
+        "impersonationMode": "impersonateAccount",
+        "account": "User2",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 3",
+        "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
+        "impersonationMode": "impersonateAccount",
+        "account": "User2",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      },
+      {
+        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 4",
+        "connectionString": "Provider=SQLOLEDB;Data Source=Dev-1\\MSSQL2022;Initial Catalog=BookStoreDW;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "User2",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
     "annotations": [
       {
         "name": "ClientCompatibilityLevel",

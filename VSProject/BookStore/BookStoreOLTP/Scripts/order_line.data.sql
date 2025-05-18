@@ -146,6 +146,7 @@ FROM order_rows o
 INNER JOIN book_rows b ON o.rn = b.rn
 ORDER BY NEWID();
 
+
 WITH book_rows AS (
     SELECT book_id,
     ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
@@ -164,3 +165,59 @@ b.book_id,
 FROM order_rows o
 INNER JOIN book_rows b ON o.rn = b.rn
 ORDER BY NEWID();
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 450 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 13 AND ol.price < 16
+ORDER BY ol.order_id, ol.book_id;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 50 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 18 AND ol.price < 22
+ORDER BY ol.order_id;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 150 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 19 AND ol.price < 21
+ORDER BY ol.price;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 50 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 17 AND ol.price < 19
+ORDER BY ol.order_id DESC; 
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 50 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 20
+ORDER BY ol.price DESC;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 250 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 19 AND ol.price < 22
+ORDER BY ol.price DESC;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 150 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 4 AND ol.price < 7
+ORDER BY ol.book_id;
+GO
+
+INSERT INTO dbo.order_line (order_id, book_id, price)
+SELECT TOP 150 ol.order_id, ol.book_id, ol.price
+FROM dbo.order_line ol
+WHERE ol.price > 7 AND ol.price < 11
+ORDER BY ol.book_id DESC;
+GO
