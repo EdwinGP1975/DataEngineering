@@ -5,7 +5,7 @@
     "culture": "en-US",
     "dataSources": [
       {
-        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW",
+        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 7",
         "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
         "impersonationMode": "impersonateAccount",
         "account": "User2",
@@ -15,42 +15,671 @@
             "value": "SqlServer"
           }
         ]
-      },
+      }
+    ],
+    "tables": [
       {
-        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 2",
-        "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
-        "impersonationMode": "impersonateAccount",
-        "account": "User2",
+        "name": "Book",
+        "columns": [
+          {
+            "name": "bookSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "bookSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "bookId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "bookId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "title",
+            "dataType": "string",
+            "sourceColumn": "title",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "isbn13",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "isbn13",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "numPages",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "numPages",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "publicationDate",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "publicationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "languageName",
+            "dataType": "string",
+            "sourceColumn": "languageName",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimBook",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimBook].*   FROM [dbo].[DimBook] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
         "annotations": [
           {
-            "name": "ConnectionEditUISource",
-            "value": "SqlServer"
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimBook].*   FROM [dbo].[DimBook] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimBook"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
           }
         ]
       },
       {
-        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 3",
-        "connectionString": "Provider=MSOLEDBSQL;Data Source=Dev-1\\MSSQL2022;Persist Security Info=false;Integrated Security=SSPI;Initial Catalog=BookStoreDW",
-        "impersonationMode": "impersonateAccount",
-        "account": "User2",
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "customerSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "customerSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customerId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "customerId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "firstName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "lastName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "lastName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "email",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "email",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "CustomerName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(Customer[firstName],CONCATENATE(\" \", Customer[lastName]))"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
         "annotations": [
           {
-            "name": "ConnectionEditUISource",
-            "value": "SqlServer"
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimCustomer].*   FROM [dbo].[DimCustomer] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimCustomer"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
           }
         ]
       },
       {
-        "name": "SqlServer Dev-1MSSQL2022 BookStoreDW 4",
-        "connectionString": "Provider=SQLOLEDB;Data Source=Dev-1\\MSSQL2022;Initial Catalog=BookStoreDW;Integrated Security=SSPI;Persist Security Info=false",
-        "impersonationMode": "impersonateAccount",
-        "account": "User2",
+        "name": "Date",
+        "columns": [
+          {
+            "name": "dateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "dateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "fullDate",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "fullDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "dayNumberOfWeek",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "dayNumberOfWeek",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "dayNameOfWeek",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "dayNameOfWeek",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "dayNumberOfMonth",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "dayNumberOfMonth",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "dayNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "dayNumberOfYear",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "weekNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "weekNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "monthName",
+            "dataType": "string",
+            "sourceColumn": "monthName",
+            "sortByColumn": "monthNumberOfYear",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "monthNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "monthNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "calendarQuarter",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "calendarQuarter",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "calendarYear",
+            "dataType": "int64",
+            "sourceColumn": "calendarYear",
+            "sourceProviderType": "SmallInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "calendarSemester",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "calendarSemester",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
         "annotations": [
           {
-            "name": "ConnectionEditUISource",
-            "value": "SqlServer"
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
           }
         ]
+      },
+      {
+        "name": "DeliverySite",
+        "columns": [
+          {
+            "name": "deliverySiteSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "deliverySiteSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "addressId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "addressId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "streetNumber",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "streetNumber",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "streetName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "streetName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "countryName",
+            "dataType": "string",
+            "sourceColumn": "countryName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "addressStatus",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "addressStatus",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDeliverySite",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDeliverySite].*   FROM [dbo].[DimDeliverySite] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDeliverySite].*   FROM [dbo].[DimDeliverySite] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDeliverySite"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Publisher",
+        "columns": [
+          {
+            "name": "publisherSK",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "publisherSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "publisherId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "publisherId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "publisherName",
+            "dataType": "string",
+            "sourceColumn": "publisherName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "title",
+            "dataType": "string",
+            "sourceColumn": "title",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "publicationDate",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "publicationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimPublisher",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimPublisher].*   FROM [dbo].[DimPublisher] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimPublisher].*   FROM [dbo].[DimPublisher] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimPublisher"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "ShippingMethod",
+        "columns": [
+          {
+            "name": "shippingMethodSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "shippingMethodSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "shippingMethodId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "shippingMethodId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "methodName",
+            "dataType": "string",
+            "sourceColumn": "methodName",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimShippingMethod",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimShippingMethod].*   FROM [dbo].[DimShippingMethod] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimShippingMethod].*   FROM [dbo].[DimShippingMethod] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimShippingMethod"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "CustOrder",
+        "columns": [
+          {
+            "name": "orderId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "orderId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "historyId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "historyId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "orderDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "orderDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "statusDateKey",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "statusDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "bookSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "bookSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "customerSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "customerSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "destDeliverySiteSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "destDeliverySiteSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "shippingMethodSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "shippingMethodSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "publisherSk",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "publisherSk",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "price",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "price",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "quantity",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "quantity",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "orderDate",
+            "dataType": "dateTime",
+            "sourceColumn": "orderDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "lastStatusId",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "lastStatusId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "lastStatusDate",
+            "dataType": "dateTime",
+            "sourceColumn": "lastStatusDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "lastOrderStatus",
+            "dataType": "string",
+            "sourceColumn": "lastOrderStatus",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "TotalBookSale",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "CustOrder[quantity]*CustOrder[price]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactCustOrder",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactCustOrder].*   FROM [dbo].[FactCustOrder] ",
+              "dataSource": "SqlServer Dev-1MSSQL2022 BookStoreDW 7"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "TotalQuantity",
+            "expression": "SUM(CustOrder[quantity])"
+          },
+          {
+            "name": "TotalSales",
+            "expression": "SUM(CustOrder[TotalBookSale])"
+          },
+          {
+            "name": "TotalOrders",
+            "expression": "DISTINCTCOUNT(CustOrder[orderId])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactCustOrder].*   FROM [dbo].[FactCustOrder] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactCustOrder"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "2cbc7300-566a-4da2-9342-b2e8dcb956b2",
+        "fromTable": "CustOrder",
+        "fromColumn": "statusDateKey",
+        "toTable": "Date",
+        "toColumn": "dateKey",
+        "isActive": false
+      },
+      {
+        "name": "671e2b8d-86ac-4a11-8567-c882c03178e3",
+        "fromTable": "CustOrder",
+        "fromColumn": "bookSk",
+        "toTable": "Book",
+        "toColumn": "bookSk"
+      },
+      {
+        "name": "31c27a61-d7bf-401d-9a31-00a32d2a7240",
+        "fromTable": "CustOrder",
+        "fromColumn": "customerSk",
+        "toTable": "Customer",
+        "toColumn": "customerSk"
+      },
+      {
+        "name": "7af73805-be5c-4240-bc39-ba44c9fbd050",
+        "fromTable": "CustOrder",
+        "fromColumn": "orderDateKey",
+        "toTable": "Date",
+        "toColumn": "dateKey"
+      },
+      {
+        "name": "6c97ceb9-db2f-4ca8-9d38-48a0df04470f",
+        "fromTable": "CustOrder",
+        "fromColumn": "destDeliverySiteSk",
+        "toTable": "DeliverySite",
+        "toColumn": "deliverySiteSk"
+      },
+      {
+        "name": "6524bdb4-d8a7-458c-ae41-456f6d0a4403",
+        "fromTable": "CustOrder",
+        "fromColumn": "publisherSk",
+        "toTable": "Publisher",
+        "toColumn": "publisherSK"
+      },
+      {
+        "name": "70f10afe-2a89-43ed-8793-a4948e05844e",
+        "fromTable": "CustOrder",
+        "fromColumn": "shippingMethodSk",
+        "toTable": "ShippingMethod",
+        "toColumn": "shippingMethodSk"
       }
     ],
     "annotations": [
