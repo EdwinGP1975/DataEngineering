@@ -1,17 +1,26 @@
-1) Desempeño de Ventas mensuales en las gestiones 2023, 2024 y 2025 (Orders performance)
-La Gerencia general requiere evaluar el desempeño de ventas por año para los últimos 12 meses. 
+1) Desempeño de Ventas mensuales en las gestiones 2022, 2023, 2024 y 2025 (General Sales)
+La Gerencia general requiere evaluar el desempeño de ventas por mes de los años indicados.
 
-2) Libros Más Vendidos (Best Seller Books)
-El área de Abastecimiento requiere un reporte que detalle los libros más vendidos en la última gestión, con el fin de optimizar el plan de aprovisionamiento y asegurar la disponibilidad de títulos con alta demanda.
+2) Paises con mayores compras (Top 10 Country Performance)
+La Gerencia Comercial necesita un reporte que permita evaluar los paises desde donde se realizan las mayores cantidades de compras en los ultimos 3 años, 
+para lanzar campañas de marketing en función a las necesidades de expansión.
 
-3) Paises con mayores compras (Contry Performance)
-La Gerencia Comercial necesita un reporte que permita evaluar los paises desde donde se realizan las mayores cantidades de compras, para lanzar campañas de marketing en función a las necesidades de expansión.
+3) Los 5 libros Más Vendidos en los 4 primeros paises con mayor compra de las ultimas 3 gestiones (Top 5 Books by Country) 
+El área de Abastecimiento requiere un reporte que detalle los 5 libros más vendidos en las últimas 3 gestiones de los 4 paises que mas ordenes realizan, 
+con el fin de optimizar el plan de aprovisionamiento y asegurar la disponibilidad de títulos con alta demanda.
 
-4) Desempeño de Clientes (Customer Performance)
-El área Administrativa solicita un reporte que permita identificar a los clientes con mayor cantidad de libros comprados en los últimos 6 meses, con el propósito de diseñar e implementar un plan de fidelización e incentivos.
+4) Libros Más Vendidos (Best Seller Books)
+El área de Abastecimiento requiere un reporte que detalle los libros más vendidos en las últimas 3 gestiones, 
+con el fin de optimizar el plan de aprovisionamiento y asegurar la disponibilidad de títulos con alta demanda.
 
-5) Ranking de los Métodos de Envío (Shipping Method Performance)
-El área de Logística requiere un reporte comparativo sobre el nivel de uso de los distintos métodos de envío disponibles, con el objetivo de evaluar su rendimiento y planificar estrategias promocionales, como descuentos específicos por método.
+5) Ranking de Editoriales (Ranking of Publishers)
+La Gerencia Comercial necesita un reporte que presente un ranking de las 10 editoriales con mayores volúmenes de venta, 
+con el fin de fortalecer los acuerdos comerciales y ampliar la oferta de títulos disponibles por editorial.
 
-6) Ranking de Editoriales (Ranking of Publishers)
-La Gerencia Comercial necesita un reporte que presente un ranking de las 10 editoriales con mayores volúmenes de venta, con el fin de fortalecer los acuerdos comerciales y ampliar la oferta de títulos disponibles por editorial.
+6) Ranking de los Métodos de Envío (Shipping Method Performance)
+El área de Logística requiere un reporte comparativo sobre el nivel de uso de los distintos métodos de envío disponibles, 
+con el objetivo de evaluar su rendimiento y planificar estrategias promocionales, como descuentos específicos por método.
+
+7) Desempeño de Clientes (Customer Performance)
+El área Administrativa solicita un reporte que permita identificar a los clientes con mayor cantidad de libros comprados, 
+con el propósito de diseñar e implementar un plan de fidelización e incentivos.
